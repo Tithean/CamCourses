@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        &lt;/&gt;CamCourses
+    </title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!-- header -->
+    <header class="px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-100">
+        <nav class="flex justify-between items-center text-center w-full">
+            <div class="flex justify-between gap-6">
+                <a href="#">
+                    <h1 class="text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                        &lt;/&gt;CamCourses
+                    </h1>
+                </a>
+                <ul class="flex justify-between gap-6 mt-2">
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">Explore</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">My Courses</a>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">Programs</a>
+                    </li>
+                </ul>
+                <div class="flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-2 w-[360px]">
+                    <input class="bg-transparent border-none outline-none w-full" type="text" placeholder="What do you want to learn?">
+                    <button>
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-4 mt-2 text-lg text-gray-900">
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-globe"></i>
+                  </a>
+                </div>
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-bell"></i>
+                  </a>
+                </div>
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-user"></i>
+                  </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- premium plan -->
+    <div class="flex justify-between items-center bg-blue-400/30 py-2 px-4 border-b border-b-blue-400/40">
+      <a href="#" class="underline text-blue-900 hover:text-blue-600">Unlock your premium plan</a>
+      <a href="#">
+        <button class="bg-linear-to-r from-blue-400 to-blue-500 rounded-2xl py-0.5 px-6 text-white cursor-pointer hover:from-blue-500 hover:to-blue-600">
+          <i class="fa-solid fa-crown"></i>
+          Premium
+        </button>
+      </a>
+    </div>
+    <!-- banner -->
+    <main class="flex items-center px-12 py-16 w-full border border-gray-300 bg-[url('/img/rupp_bg.png')] bg-cover bg-center">
+        <div class="flex items-center gap-64 mx-auto py-8 w-fit px-4">
+            <div class="flex flex-col gap-2">
+                <h1 class="text-4xl font-bold text-white">Royal University of</h1>
+                <h1 class="text-4xl font-bold text-white">Phnom Penh</h1>
+                <p class="text-white">
+                    Courses from RUPP
+                </p>
+                <div class="flex gap-8">
+                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                        Computer Science
+                    </a>
+                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                        Information Technology
+                    </a>
+                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                        Information System
+                    </a>
+                </div>
+                <p class="text-white underline cursor-pointer hover:text-blue-500">see more</p>
+            </div>
+            <img class="w-[210px]" src="./img/RUPP.png" alt="RUPP">
+        </div>
+    </main>
+
+    <!-- all courses -->
+     <div class="mx-auto text-center py-8 ">
+        <a href="./pages/course.html" class="border border-blue-500 text-[16px] rounded-[12px] py-2 px-6 text-blue-500 cursor-pointer hover:bg-blue-200/70 transition-all duration-300">
+            All Courses
+        </a>
+     </div>
+
+    <!-- university -->
+    <div class="uni-logo border-b border-b-gray-300 pb-6">
+         <div class="px-16 py-4">
+             <h1 class="text-2xl font-bold">learn from University</h1>
+         </div>
+         <div class="flex gap-16 justify-center mx-auto w-fit px-16 py-2">
+             <div class="flex flex-col gap-2 items-center text-center">
+              <a href="#">
+                <img width="100px" src="./img/RUPP.png" alt="RUPP">
+                <span class="text-[12px] hover:underline">RUPP</span>
+              </a>
+             </div>
+             <div class="flex flex-col gap-2 items-center text-center">
+              <a href="#">
+                <img width="100px" src="./img/istad.png" alt="ISTAD">
+                <span class="text-[12px] hover:underline">ISTAD</span>
+              </a>
+             </div>
+             <div class="flex flex-col gap-2 items-center text-center mt-[25px]">
+              <a href="#">
+                <img class="cadt-logo" src="./img/cadt.png" alt="CADT">
+                <span class="text-[12px] hover:underline">CADT</span>
+              </a>
+             </div>
+             <div class="flex flex-col gap-2 items-center text-center">
+              <a href="#">
+                <img width="100px" src="./img/aupp.png" alt="AUPP">
+                <span class="text-[12px] hover:underline">AUPP</span>
+              </a>
+             </div>
+             <div class="flex flex-col gap-2 items-center text-center -mt-1">
+              <a href="#">
+                <img width="100px" src="./img/techno.png" alt="Techno">
+                <span class="text-[12px] hover:underline">Techno</span>
+              </a>
+             </div>
+             <div class="flex flex-col gap-2 items-center text-center -mt-1">
+              <a href="#">
+                <img width="100px" src="./img/camtech.png" alt="CamTech">
+                <span class="text-[12px] hover:underline">CamTech</span>
+              </a>
+             </div>
+         </div>
+    </div>
+
+    <!--  -->
+
+    <!-- popular courses -->
+    <div class="border-b border-b-gray-300 px-16 pt-4">
+        <div class="">
+            <h1 class="text-2xl font-bold">Popular</h1>
+        </div>
+      <div class="py-6 flex gap-8">
+        <!-- python -->
+        <div class="border border-gray-300 rounded-2xl w-[300px] px-8 py-4 cursor-pointer hover:border-blue-400">
+          <div class="bg-amber-100 rounded-xl px-8 py-4">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/python.webp" alt="python">
+          </div>
+          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Python for Beginner</h2>
+          <p class="text-[14px]">By: JomNum Tech</p>
+          <p class="text-[14px]">Hours: 45 hr</p>
+
+          <div class="flex justify-between">
+            <span class="text-[14px] text-gray-500 mt-4">rating</span>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex text-yellow-500 gap-2">
+              <span>4.5</span>
+              <div class="flex gap-1 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            <span class="text-[14px] text-gray-500 mr-0">Free</span>
+          </div>
+        </div>
+        <!-- Fullstack web -->
+        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+          <div class="bg-blue-100 rounded-xl px-8 py-4">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/istad.png" alt="fullstack">
+          </div>
+          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Fullstack Web Development</h2>
+          <p class="text-[14px]">By: ISTAD</p>
+          <p class="text-[14px]">Hours: 75 hr</p>
+
+          <div class="flex justify-between">
+            <span class="text-[14px] text-gray-500 mt-4">rating</span>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex text-yellow-500 gap-2">
+              <span>4.5</span>
+              <div class="flex gap-1 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            <span class="text-[14px] text-gray-500 mr-0">$250</span>
+          </div>
+        </div>
+        <!-- computer science -->
+        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+          <div class="bg-gray-100 rounded-xl px-8 py-4">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/aupp.png" alt="fullstack">
+          </div>
+          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Computer Science</h2>
+          <p class="text-[14px]">By: AUPP</p>
+          <p class="text-[14px]">Hours: 75 hr</p>
+
+          <div class="flex justify-between">
+            <span class="text-[14px] text-gray-500 mt-4">rating</span>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex text-yellow-500 gap-2">
+              <span>4.5</span>
+              <div class="flex gap-1 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            <span class="text-[14px] text-gray-500 mr-0">$600</span>
+          </div>
+        </div>
+        <!-- data science -->
+        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+          <div class="bg-red-200 rounded-xl px-8 py-4">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/RUPP.png" alt="fullstack">
+          </div>
+          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Data Science</h2>
+          <p class="text-[14px]">By: RUPP</p>
+          <p class="text-[14px]">Hours: 75 hr</p>
+
+          <div class="flex justify-between">
+            <span class="text-[14px] text-gray-500 mt-4">rating</span>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex text-yellow-500 gap-2">
+              <span>4.5</span>
+              <div class="flex gap-1 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            <span class="text-[14px] text-gray-500 mr-0">$570</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--  -->
+       
+
+
+
+
+
+
+    <!-- floating btn support -->
+    <div>
+      <button class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-70 hover:scale-110">
+        <i class="fa-solid fa-robot" title="Assistant"></i>
+      </button>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-gray-100 text-gray-900 py-8">
+      <div class="flex container mx-auto gap-64 justify-center">
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <a href="#" class="text-2xl font-bold">
+              <i class="fa-solid fa-code"></i>
+              CamCode
+            </a>
+          </div>
+          <div class="w-full">
+            <ul class="leading-8">
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">About Us</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Terms &amp; Conditions</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Privacy Policy</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Contact Us</h3>
+          </div>
+          <div class="w-full">
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Follow Us</h3>
+          </div>
+          <div class="w-full">
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-gray-700 mt-8 mx-16">
+      <div class="container mx-auto px-4 flex justify-center">
+        <div class="flex gap-16 mx-auto">
+          <p class="text-gray-700">© 2026 CamCode. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+        
+
+
+
+</body>
+</html>

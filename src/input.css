@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body{
+    scroll-behavior: smooth;
+}
+.uni-logo .cadt-logo{
+    width: auto;
+    height: 93px;
+}
+.uni-logo img{
+    transition: all 0.3s ease;
+    width: 120px;
+    height: 120px;
+}
+.uni-logo img:hover{
+    transform: scale(1.1);
+}
