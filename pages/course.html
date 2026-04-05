@@ -1,0 +1,2207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamCode</title>
+    <link rel="stylesheet" href="../src/output.css">
+  </head>
+  <body class="bg-gray-100">
+    <div id="root">
+      <div>
+        <main class="container mx-auto px-4 py-12">
+          <h1 class="text-3xl font-bold mb-8 text-center font-batbombong">
+            <span class="text-orange-500">ថ្នាក់ទាំងអស់</span>
+            <span class="text-green-500">រួមមាន៖ </span>
+          </h1>
+          <div class="mb-8">
+            <div class="relative mx-auto flex gap-2">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="ស្វែងរកវគ្គសិក្សា​..."
+                  class="h-full w-full pl-10 pr-4 rounded-lg border border-gray-300 bg-white focus:outline-none focus:border-blue-500 font-batbombong placeholder:italic"
+                  value
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 absolute left-3 top-2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </div>
+              <div class="relative">
+                <button
+                  class="px-4 py-2 rounded-lg bg-white border border-gray-300 hover:bg-blue-400 flex items-center gap-2 "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                  <span class="font-mono hidden sm:inline">Filter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                  FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Introduction
+                </h2>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Data Science Foundation: Data Wrangling
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    នេះគឺជាផ្នែកទី 1 នៃវគ្គសិក្សាមូលដ្ឋានដែលបង្រៀនអ្នកអំពី Data Science និងវិធីដែលវាត្រូវបានប្រើដើម្បីវិភាគ និងយល់អំពីទិន្នន័យនៅក្នុងជីវិតប្រចាំថ្ងៃ។ អ្នកនឹងរៀនពីការកំណត់ Python ដែលជាឧបករណ៍ពេញនិយមបំផុតសម្រាប់ Data Science ហើយប្រើវាដើម្បីសម្អាត រៀបចំ និងស្វែងយល់ពីទិន្នន័យ។ អ្នកនឹងរៀនពី Exploratory Data Analysis, Data Visualization, Time Series Analysis, Handling Categorical Data, Combining & Reshaping Data, និងទៀត។ នៅចុងបញ្ចប់នៃវគ្គសិក្សា អ្នកនឹងយល់ពីរបៀបដែល Data Science ជួយដោះស្រាយបញ្ហាជាច្រើនក្នុងវិស័យដូចជាជំនួញ សុខភាព និងបច្ចេកវិទ្យា ហើយអ្នកនឹងមានជំនាញដើម្បីចាប់ផ្តើមវិភាគទិន្នន័យដោយខ្លួនឯង។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300 font-batbombong"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                  FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Introduction to AI and Machine Learning
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    វគ្គសិក្សានេះផ្ដល់នូវការណែនាំដែលមានរចនាសម្ព័ន្ធច្បាស់លាស់អំពី AI និង Machine Learning។ វគ្គសិក្សាជំរុញឱ្យសិស្សស្គាល់មូលដ្ឋានគ្រឹះ ព្យាករណ៍ Python និងឧបករណ៍សំខាន់ៗដូចជា NumPy, Pandas និង Matplotlib។ សិស្សនឹងស្វែងយល់អំពីវិធីសាស្រ្តរៀនដែលមានការស្រាវជ្រាវដូចជា Linear Regression, Logistic Regression, និង K-Means Clustering។ អំពាវនាវមុខវិជ្ជាទាំងនេះ ផ្តល់ជូនការរៀនដៃក្នុងបែបជាក់ស្តែង និងជាក់ស្តែងសម្រាប់ការអនុវត្តក្នុងជីវិតប្រចាំថ្ងៃ។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                  FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  LAMP Stack
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    LAMP Stack—Linux, Apache, MySQL, និង PHP គឺជា stack មានអានុភាព និងត្រូវបានប្រើយ៉ាងទូលំទូលាយសម្រាប់បង្កើត និងទ្រទ្រង់កម្មវិធីគេហទំព័រ (website) ដែលមានលក្ខណៈសកម្ម។ អ្នកនឹងទទួលបានបទពិសោធន៍ជាក់ស្តែងជាមួយឧបករណ៍បញ្ជាប្រព័ន្ធ Linux Command Line, ការកំណត់រចនាសម្ព័ន្ធ Apache Web Server, ការរួមបញ្ចូល PHP, និងការគ្រប់គ្រងទិន្នន័យ MySQL។ ជាទុកចិត្តដោយក្រុមហ៊ុនធំៗដូចជា Facebook និង WordPress, LAMP Stack គឺជា​មូលដ្ឋានសំខាន់សម្រាប់ដំណោះស្រាយអភិវឌ្ឍកម្មវិធីគេហទំព័រដែលទូលំទូលាយ និងមានស្ថេរភាព។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                  FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  React
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    React គឺជា library មួយដែលល្បីបំផុតសម្រាប់បង្កើត website។ ក្រុមហ៊ុនធំៗដែលប្រើវាមានដូចជា Facebook និង Netflix។ នៅក្នុងវគ្គសិក្សានេះ អ្នកនឹងបានសិក្សាថា ម៉េចបានជា React គឺជាជំនាញចាំបាច់សម្រាប់អ្នកបង្កើត website ដោយចាប់ផ្ដើមពីមូលដ្ឋានងាយៗដូចជា building components និង creating user interfaces ហើយបន្តដល់ប្រធានបទកម្រិតខ្ពស់ជាងនេះ ដូចជា managing data និង handling user interactions។ ជាមួយនឹងមេរៀងងាយៗ និងការអនុវត្តជាក់ស្តែង អ្នកនឹងឃើញថា React ធ្វើឱ្យការអភិវឌ្ឍគេហទំព័រចំណាយពេលតិច ងាយស្រួល និងសប្បាយជាងមុន។ 
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Free Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 rounded-2xl"
+                >
+                  FREE
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  C#
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    C# គឺជា​ភាសាកម្មវិធីដែលមានប្រយោជនភាព និងអនុវត្តបានច្រើនតំបន់ ដូចជា​ការអភិវឌ្ឍកម្មវិធីសហគ្រាស (Enterprise-level Applications), ​web services, ​game development, ​និង​ផ្សេងៗ​ទៀត។ ​ដោយធ្វើសហគ្រិនភាពជាមួយ .NET framework, ​C# ​ធ្វើឱ្យការបង្កើតកម្មវិធីដែលរឹងមាំ និងអាចទ្រាំបានសម្រាប់ Windows, macOS, និង Linux កាន់តែមានប្រសិទ្ធភាព។ ក្រុមហ៊ុនដូចជា Microsoft, Stack Overflow, និង Unity Technologies បានប្រើប្រាស់ C# សម្រាប់ការបង្កើតកម្មវិធីសហគ្រាស, backend services, និង game engines។ ​វគ្គសិក្សានេះត្រូវបានរចនាឡើងដើម្បីណែនាំអ្នកចាប់ពីមូលដ្ឋានសsyntax និង data types របស់ C# ដល់គំនិតកម្រិតខ្ពស់ដូចជា object-oriented programming, asynchronous programming, និងការអភិវឌ្ឍកម្មវិធី ដើម្បីឱ្យអ្នកមានសមត្ថភាពសម្របសម្រួលគម្រោងជាក់ស្តែងនៅក្នុងឧស្សាហកម្មផ្សេងៗ។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Computer Networking
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    "Computer Networking" ផ្តល់នូវការណែនាំដ៏ទូលំទូលាយស្តីពី networking concepts, tools, និង practices។ វគ្គសិក្សានេះគ្របដណ្តប់លើប្រធានបទសំខាន់ៗដូចជា IP addressing, network topologies, switching, routing, QoS, និង security fundamentals។ តាមរយៈលំហាត់ប្រតិបត្តិជាក់ស្តែងប្រើប្រាស់ឧបករណ៍ដូចជា Packet Tracer និង Wireshark, សិក្ខាកាមនឹងទទួលបានជំនាញជាក់ស្តែងក្នុងការរចនា, troubleshooting, និងបង្កើនប្រសិទ្ធភាព networking។ វគ្គសិក្សានេះសាកសមសម្រាប់អ្នកចាប់ផ្ដើមដែលចង់បង្កើតមូលដ្ឋានរឹងមាំសម្រាប់អាជីពក្នុងវិស័យ IT ឬ network management។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Flutter
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">
+                    Flutter គឺជា framework ដែលបង្កើតឡើងដោយ Google សម្រាប់ការបង្កើតកម្មវិធីដែលអាចដំណើរការបានទាំងលើ iOS និង Android ដោយសរសេរកូដតែម្តង។ វាមានលខ្ខណៈល្បឿនលឿន មានភាពបត់បែន និងអាចបង្កើតការរចនាទាក់ទាញ។ ក្រុមហ៊ុនធំៗដូចជា Google, Alibaba និង eBay ប្រើវាសម្រាប់កម្មវិធីទំនើបរបស់ពួកគេ។ នៅកម្ពុជា Flutter កំពុងមានប្រជាប្រិយភាពខ្លាំង ដោយជាជម្រើសល្អសម្រាប់ការបង្កើតកម្មវិធី។ វគ្គសិក្សានេះជារបៀបរៀនពីមូលដ្ឋានដល់ជំនាញខ្ពស់ ការប្រើ SQLite សម្រាប់ទិន្នន័យក្នុងម៉ាស៊ីន និង Firebase សម្រាប់ទិន្នន័យពេលវេលាពិត។ Flutter គឺប្រើភាសា Dart ហើយបើអត់ចេះ អាចរៀនលើ CodeForCambodia បាន។ វាមានគ្រប់ចំណុចដែលអ្នកត្រូវការដើម្បីបង្កើតកម្មវិធីទំនើប!‍ 
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Dart
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">  
+                    Dart គឺជាភាសាកម្មវិធីទំនើបពី Google ដែលមានសារៈសំខាន់ជាមូលដ្ឋានសម្រាប់ការរៀន Flutter ព្រោះវាជាភាសាដែលគាំទ្រកម្មវិធីទាំងអស់ដែលបង្កើតដោយ Flutter។ Dart គឺមានភាពងាយស្រួល ប្រកបដោយសុវត្ថិភាពនៃប្រភេទទិន្នន័យ និងល្បឿនប្រតិបត្តិការល្អ។ វគ្គសិក្សានេះនឹងនាំអ្នកចាប់ផ្តើមពីការសរសេរកម្មវិធីដំបូងជាមួយ Dart ដល់ការគ្រប់គ្រងមូលដ្ឋានសំខាន់ៗដូចជាផ្លាស់ប្តូរទិន្នន័យ ការត្រួតពិនិត្យលក្ខខណ្ឌ មុខងារ ការសរសេរកូដដោយប្រើ OOP និងការប្រើប្រព័ន្ធអសំរណៈ។ អ្នកនឹងស្វែងយល់ពីរបៀបដែល Dart ប្រើសម្រាប់ការគ្រប់គ្រងស្ថានភាព និងការរួមចំណែកសំខាន់ក្នុងការអភិវឌ្ឍកម្មវិធី Flutter។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  Advanced Python
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">  
+                    វគ្គសិក្សានេះជាការបន្តពីវគ្គ Python មូលដ្ឋាន។ ចាប់ផ្ដើមពីប្រធានបទដូចជា tuples, sets, និង Big O notation អ្នកនឹងបន្តសិក្សាប្រធានបទដូចជា data structures, algorithms, និង dynamic programming។ វគ្គសិក្សានេះក៏ណែនាំអំពី scientific computing ជាមួយ NumPy និង SciPy, data analysis ជាមួយ Pandas, និង data visualization ជាមួយ Matplotlib ហើយបញ្ចប់ដោយការណែនាំ machine learning ជាមួយ scikit-learn។ មេរៀននីមួយៗត្រូវបានបង្កើតឡើងដោយផ្អែកលើមូលដ្ឋានគ្រឹះ Python និងមានសកម្មភាពអនុវត្ត និងតេស្តសំណួរដើម្បីធ្វើឱ្យអ្នកមានការយល់ដឹងរឹងមាំ ដែលសាកសមសម្រាប់អ្នកដែលត្រៀមខ្លួនដើម្បីបន្តដំណើរការសិក្សា Python។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  NodeJS
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">  
+                    ស្វែងយល់ពីសក្តានុពលរបស់ Node.js ដែលជាប្រព័ន្ធ JavaScript រហ័ស និងមានប្រសិទ្ធភាព ដែលបានប្រើប្រាស់ដោយក្រុមហ៊ុនធំៗដូចជា Netflix, PayPal, និង LinkedIn ដើម្បីស្ថាបនាប្រព័ន្ធវេបអាប់ផ្លីខេសិន (web app) ដ៏អាចទុកចិត្តបាន។ អ្នកនឹងចាប់ផ្ដើមដោយសិក្សាមូលដ្ឋានអំពី Node.js ចាប់ពីការដំឡើងទៅដល់ advanced features រួចចូលទៅសិក្សាគំនិត JavaScript ដ៏សំខាន់។ នៅក្នុងការរៀននេះ អ្នកនឹងសិក្សាអំពីប្រធានបទដូចជា ការសាងសង់ basic web app files ការប្រតិបត្តិ asynchronous programming និងការគ្រប់គ្រង package ជាមួយនឹង NPM។ មិនថាធ្លាប់រៀន Node ឬជាអ្នកសរសេរកូដកម្រិតដំបូង ឬចង់ពង្រីកជំនាញរបស់ខ្លួន វគ្គសិក្សាគឺរៀនបានគ្រប់គ្នា និងងាយស្រួលក្នុងការសិក្សាអំពី Node.js។
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white border-gray-200 hover:border-blue-500 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer relative"
+            >
+              <div class="bg-gray-200 flex px-4 py-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ff5f56"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 hover:"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffbd2e"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#27c93f"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span
+                  class="text-sm text-gray-600 flex-auto text-center font-batbombong"
+                  >Premium Course</span
+                >
+                <div
+                  class="absolute px-2 py-1 m-2 right-0 top-0 text-xs font-bold bg-yellow-500 text-gray-800 hover:bg-yellow-700 transition-colors duration-300 rounded-2xl"
+                >
+                  PREMIUM
+                </div>
+              </div>
+              <div class="p-6">
+                <h2
+                  class="text-xl font-bold mb-2 text-blue-600 font-batbombong"
+                >
+                  ExpressJS
+                </h2>
+                <div class="text-gray-600 mb-2 font-batbombong line-clamp-3">  
+                    បង្កើត backend web app ដែលមានប្រសិទ្ធភាព ធន់ធ្ងន់ និងមានលក្ខណៈ dynamic ដោយប្រើ Express.js ដែលជា framework ដ៏ល្បីរបស់ Node.js ដែលត្រូវបានក្រុមហ៊ុនបច្ចេកវិទ្យាធំៗដូចជា Uber, Accenture, និង IBM ទុកចិត្តប្រើប្រាស់។ CodeForCambodia ក៏បានប្រើ Express សម្រាប់ភាពបត់បែន និងប្រសិទ្ធភាពរបស់វាក្នុងការបង្កើត API និងប្រព័ន្ធ backend ដ៏រឹងមាំ។ វគ្គសិក្សានេះគ្របដណ្តប់ពីការកំណត់ syntax និងមូលដ្ឋានដល់ routing, middleware, ការអភិវឌ្ឍ API ប្រភេទ RESTful, ការរួមបញ្ចូលមូលដ្ឋានទិន្នន័យ, ការផ្ទៀងផ្ទាត់អត្តសញ្ញាណ, និងបច្ចេកទេសបញ្ចេញកម្មវិធីកម្រិតខ្ពស់។ ក្រោយរៀនចប់ អ្នកនឹងទទួលបានជំនាញដែលចាំបាច់ដើម្បីសង់ backend និង APIs
+                </div>
+                <button
+                  class="text-sm flex items-center mb-4 text-blue-500 hover:text-blue-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                  <p><span style="margin: 5px">អានបន្ថែម</span></p>
+                </button>
+                <div
+                  class="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4 font-batbombong"
+                >
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ជំពូក</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">48</span>មេរៀន</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">9</span>ប្រលង</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">4</span>ឯកសារ</p>
+                  </span>
+                  <span class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <p><span style="margin: 5px">25</span>លំហាត់កូដ</p>
+                  </span>
+                </div>
+                <a
+                  href=""
+                  class="bg-green-500 block px-4 py-2 text-center font-medium rounded-2xl hover:bg-green-700 text-white transition-colors duration-300"
+                  >រៀនឥឡូវនេះ</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-8 text-3xl font-batbombong">
+            <span class="text-orange-500">I wish you </span>
+            <span class="text-gray-800">success!</span>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
