@@ -3,27 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        &lt;/&gt;CamCourses
-    </title>
+    <meta name="description" content="CamCourses — Cambodia's premier e-learning platform. Learn Python, Web Development, Data Science, AI and more from top universities.">
+    <title>&lt;/&gt;CamCourses</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
     <!-- header -->
-    <header class="px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-100">
-        <nav class="flex justify-between items-center text-center w-full">
-            <div class="flex justify-between gap-6">
+    <header class="px-4 sm:px-8 lg:px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-50">
+        <nav class="flex justify-between items-center w-full">
+            <!-- Left: Logo + Desktop Nav -->
+            <div class="flex items-center gap-4 lg:gap-6">
                 <a href="#">
-                    <h1 class="text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                    <h1 class="text-2xl sm:text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
                         &lt;/&gt;CamCourses
                     </h1>
                 </a>
-                <ul class="flex justify-between gap-6 mt-2">
-                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                <!-- Desktop nav links (hidden on mobile) -->
+                <ul class="hidden lg:flex gap-4 xl:gap-6 mt-1">
+                    <li id="explore-btn" class="relative text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl cursor-pointer select-none">
                         <a href="#">Explore</a>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down ml-1"></i>
+                        <!-- Explore Dropdown -->
+                        <div id="explore-menu" class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                            <div class="py-2">
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-globe text-blue-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Web Development</p>
+                                        <p class="text-xs text-gray-500">HTML, CSS, JavaScript, React</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-database text-green-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Data Science</p>
+                                        <p class="text-xs text-gray-500">Python, Pandas, Visualization</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-robot text-purple-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">AI & Machine Learning</p>
+                                        <p class="text-xs text-gray-500">Neural Networks, NLP, CV</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-server text-orange-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">DevOps & Cloud</p>
+                                        <p class="text-xs text-gray-500">Docker, AWS, CI/CD</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-mobile-screen text-cyan-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Mobile Development</p>
+                                        <p class="text-xs text-gray-500">Flutter, React Native</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-gray-100 px-4 py-3 bg-gray-50">
+                                <a href="./pages/course.html" class="text-blue-600 text-sm font-semibold hover:underline">View All Courses →</a>
+                            </div>
+                        </div>
                     </li>
                     <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
                         <a href="#">My Courses</a>
@@ -32,90 +76,242 @@
                         <a href="#">Programs</a>
                     </li>
                 </ul>
-                <div class="flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-2 w-[360px]">
-                    <input class="bg-transparent border-none outline-none w-full" type="text" placeholder="What do you want to learn?">
+                <!-- Desktop search bar (hidden on mobile) -->
+                <div class="hidden md:flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-1 w-48 lg:w-72 xl:w-[360px] transition-all focus-within:border-blue-500 focus-within:shadow-sm">
+                    <input id="search-input" class="bg-transparent border-none outline-none w-full py-1" type="text" placeholder="What do you want to learn?">
                     <button>
-                        <i class="fa-solid fa-search"></i>
+                        <i class="fa-solid fa-search text-gray-500"></i>
                     </button>
                 </div>
             </div>
-            <div class="flex gap-4 mt-2 text-lg text-gray-900">
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+            <!-- Right: Icons + Hamburger -->
+            <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
+                <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors hidden sm:block">
                   <a href="">
                       <i class="fa-solid fa-globe"></i>
                   </a>
                 </div>
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
-                  <a href="">
+                <!-- Bell with notification panel -->
+                <div class="relative">
+                  <button id="bell-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
                       <i class="fa-solid fa-bell"></i>
-                  </a>
+                      <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">3</span>
+                  </button>
+                  <!-- Notification Panel -->
+                  <div id="notification-panel" class="notification-panel absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <div class="px-4 py-3 border-b border-gray-100">
+                          <h3 class="font-bold text-gray-800">Notifications</h3>
+                      </div>
+                      <div class="max-h-64 overflow-y-auto">
+                          <div class="notif-item flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-50">
+                              <div class="bg-blue-100 rounded-full p-2 mt-0.5">
+                                  <i class="fa-solid fa-graduation-cap text-blue-600 text-sm"></i>
+                              </div>
+                              <div class="flex-1">
+                                  <p class="text-sm text-gray-800 font-medium">New course available!</p>
+                                  <p class="text-xs text-gray-500">Python for Beginner has been updated.</p>
+                                  <p class="text-xs text-gray-400 mt-1">2 hours ago</p>
+                              </div>
+                              <button class="notif-dismiss text-gray-400 hover:text-red-500 transition-colors">
+                                  <i class="fa-solid fa-xmark text-sm"></i>
+                              </button>
+                          </div>
+                          <div class="notif-item flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-50">
+                              <div class="bg-green-100 rounded-full p-2 mt-0.5">
+                                  <i class="fa-solid fa-trophy text-green-600 text-sm"></i>
+                              </div>
+                              <div class="flex-1">
+                                  <p class="text-sm text-gray-800 font-medium">Congratulations! 🎉</p>
+                                  <p class="text-xs text-gray-500">You completed 50% of your course.</p>
+                                  <p class="text-xs text-gray-400 mt-1">1 day ago</p>
+                              </div>
+                              <button class="notif-dismiss text-gray-400 hover:text-red-500 transition-colors">
+                                  <i class="fa-solid fa-xmark text-sm"></i>
+                              </button>
+                          </div>
+                          <div class="notif-item flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                              <div class="bg-purple-100 rounded-full p-2 mt-0.5">
+                                  <i class="fa-solid fa-gift text-purple-600 text-sm"></i>
+                              </div>
+                              <div class="flex-1">
+                                  <p class="text-sm text-gray-800 font-medium">Premium Offer</p>
+                                  <p class="text-xs text-gray-500">Get 50% off Premium this week only!</p>
+                                  <p class="text-xs text-gray-400 mt-1">3 days ago</p>
+                              </div>
+                              <button class="notif-dismiss text-gray-400 hover:text-red-500 transition-colors">
+                                  <i class="fa-solid fa-xmark text-sm"></i>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="px-4 py-3 border-t border-gray-100 text-center">
+                          <a href="#" class="text-sm text-blue-600 hover:underline font-semibold">View all notifications</a>
+                      </div>
+                  </div>
                 </div>
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
-                  <a href="">
+                <!-- Account dropdown -->
+                <div class="relative">
+                  <button id="account-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
                       <i class="fa-solid fa-user"></i>
-                  </a>
+                  </button>
+                  <!-- Account Panel -->
+                  <div id="account-panel" class="notification-panel absolute right-0 top-full mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <!-- Profile header -->
+                      <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+                          <div class="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                              T
+                          </div>
+                          <div>
+                              <p class="font-bold text-gray-800 text-sm">Thean</p>
+                              <p class="text-xs text-gray-500">thean@camcourses.com</p>
+                          </div>
+                      </div>
+                      <!-- Menu items -->
+                      <div class="py-2">
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-book-open text-blue-500 w-5 text-center"></i>
+                              My Courses
+                              <span class="ml-auto bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full font-semibold">3</span>
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-certificate text-amber-500 w-5 text-center"></i>
+                              Certificates
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-bookmark text-purple-500 w-5 text-center"></i>
+                              Saved Courses
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-chart-line text-green-500 w-5 text-center"></i>
+                              Progress
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-gear text-gray-500 w-5 text-center"></i>
+                              Settings
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-circle-question text-gray-500 w-5 text-center"></i>
+                              Help Center
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-red-50 transition-colors text-sm text-red-600">
+                              <i class="fa-solid fa-right-from-bracket w-5 text-center"></i>
+                              Sign Out
+                          </a>
+                      </div>
+                  </div>
                 </div>
+                <!-- Hamburger button (mobile only) -->
+                <button id="hamburger-btn" class="lg:hidden rounded-full hover:bg-gray-200 px-2 py-1 cursor-pointer transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden">
+            <div class="pt-4 pb-2 space-y-1">
+                <!-- Mobile Search -->
+                <div class="flex border border-gray-300 rounded-2xl px-4 py-2 mb-3 md:hidden focus-within:border-blue-500">
+                    <input class="bg-transparent border-none outline-none w-full text-sm" type="text" placeholder="What do you want to learn?">
+                    <button>
+                        <i class="fa-solid fa-search text-gray-500"></i>
+                    </button>
+                </div>
+                <!-- Mobile nav links -->
+                <div>
+                    <button id="mobile-explore-btn" class="w-full flex justify-between items-center text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors cursor-pointer">
+                        <span class="font-medium">Explore</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div id="mobile-explore-menu" class="hidden pl-4 space-y-1">
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-globe text-blue-500 w-4"></i> Web Development
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-database text-green-500 w-4"></i> Data Science
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-robot text-purple-500 w-4"></i> AI & Machine Learning
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-server text-orange-500 w-4"></i> DevOps & Cloud
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    My Courses
+                </a>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    Programs
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors">
+                    <i class="fa-solid fa-globe mr-2"></i> Language
+                </a>
+            </div>
+        </div>
     </header>
+
     <!-- premium plan -->
-    <div class="flex justify-between items-center bg-blue-400/30 py-2 px-4 border-b border-b-blue-400/40">
-      <a href="#" class="underline text-blue-900 hover:text-blue-600">Unlock your premium plan</a>
+    <div class="flex justify-between items-center bg-blue-400/30 py-2 px-4 sm:px-8 border-b border-b-blue-400/40">
+      <a href="#" class="underline text-blue-900 hover:text-blue-600 text-sm sm:text-base">Unlock your premium plan</a>
       <a href="#">
-        <button class="bg-linear-to-r from-blue-400 to-blue-500 rounded-2xl py-0.5 px-6 text-white cursor-pointer hover:from-blue-500 hover:to-blue-600">
+        <button class="bg-linear-to-r from-blue-400 to-blue-500 rounded-2xl py-0.5 px-4 sm:px-6 text-white cursor-pointer hover:from-blue-500 hover:to-blue-600 text-sm sm:text-base transition-all">
           <i class="fa-solid fa-crown"></i>
-          Premium
+          <span class="hidden sm:inline">Premium</span>
         </button>
       </a>
     </div>
+
     <!-- banner -->
-    <main class="flex items-center px-12 py-16 w-full border border-gray-300 bg-[url('/img/istad_bg.png')] bg-cover bg-center">
-        <div class="flex items-center gap-64 mx-auto py-8 w-fit px-4">
-            <div class="flex flex-col gap-2">
-                <h1 class="text-4xl font-bold text-white">Institute of Science and Technology</h1>
-                <h1 class="text-4xl font-bold text-white">Advanced Development</h1>
+    <main class="flex items-center px-4 sm:px-8 lg:px-12 py-10 sm:py-16 w-full border border-gray-300 bg-[url('/img/istad_bg.png')] bg-cover bg-center">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-32 xl:gap-64 mx-auto py-4 sm:py-8 w-full max-w-7xl px-4">
+            <div class="flex flex-col gap-2 text-center md:text-left">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Institute of Science and Technology</h1>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Advanced Development</h1>
                 <p class="text-white">
                     ISTAD open courses
                 </p>
-                <div class="flex gap-8">
-                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                <div class="flex gap-4 sm:gap-8 flex-wrap justify-center md:justify-start">
+                    <a class="text-gray-200 cursor-pointer hover:underline text-sm sm:text-base" href="">
                         Spring Boot
                     </a>
-                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                    <a class="text-gray-200 cursor-pointer hover:underline text-sm sm:text-base" href="">
                         Fullstack Web Development
                     </a>
-                    <a class="text-gray-200 cursor-pointer hover:underline" href="">
+                    <a class="text-gray-200 cursor-pointer hover:underline text-sm sm:text-base" href="">
                         DevOps Engineering
                     </a>
                 </div>
-                <p class="text-white underline w-fit cursor-pointer hover:text-blue-500">see more</p>
+                <p class="text-white underline w-fit cursor-pointer hover:text-blue-500 mx-auto md:mx-0">see more</p>
             </div>
-            <img class="w-[210px]" src="./img/istad.png" alt="ISTAD">
+            <img class="w-[140px] sm:w-[180px] lg:w-[210px] order-first md:order-last" src="./img/istad.png" alt="ISTAD">
         </div>
     </main>
 
     <!-- all courses -->
-     <div class="mx-auto text-center py-8 ">
-        <a href="./pages/course.html" class="border border-blue-500 text-[16px] rounded-[12px] py-2 px-6 text-blue-500 cursor-pointer hover:bg-blue-200/70 transition-all duration-300">
+     <div class="mx-auto text-center py-8">
+        <a href="./pages/course.html" class="border border-blue-500 text-[16px] rounded-[12px] py-2 px-6 text-blue-500 cursor-pointer hover:bg-blue-500 hover:text-white transition-all duration-300">
             All Courses
         </a>
      </div>
 
     <!-- university -->
-    <div class="uni-logo border-b border-b-gray-300 pb-6">
-         <div class="px-16 py-4">
-             <h1 class="text-2xl font-bold">learn from University</h1>
+    <div class="uni-logo border-b border-b-gray-300 pb-6 scroll-reveal">
+         <div class="px-4 sm:px-8 lg:px-16 py-4">
+             <h1 class="text-xl sm:text-2xl font-bold">Learn from University</h1>
          </div>
-         <div class="flex gap-16 justify-center mx-auto w-fit px-16 py-2">
+         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 sm:gap-10 lg:gap-16 justify-items-center px-4 sm:px-8 lg:px-16 py-2">
              <div class="flex flex-col gap-2 items-center text-center">
               <a href="#">
-                <img width="100px" src="./img/RUPP.png" alt="RUPP">
+                <img src="./img/RUPP.png" alt="RUPP">
                 <span class="text-[12px] hover:underline">RUPP</span>
               </a>
              </div>
              <div class="flex flex-col gap-2 items-center text-center">
               <a href="#">
-                <img width="100px" src="./img/istad.png" alt="ISTAD">
+                <img src="./img/istad.png" alt="ISTAD">
                 <span class="text-[12px] hover:underline">ISTAD</span>
               </a>
              </div>
@@ -127,19 +323,19 @@
              </div>
              <div class="flex flex-col gap-2 items-center text-center">
               <a href="#">
-                <img width="100px" src="./img/aupp.png" alt="AUPP">
+                <img src="./img/aupp.png" alt="AUPP">
                 <span class="text-[12px] hover:underline">AUPP</span>
               </a>
              </div>
              <div class="flex flex-col gap-2 items-center text-center -mt-1">
               <a href="#">
-                <img width="100px" src="./img/techno.png" alt="Techno">
+                <img src="./img/techno.png" alt="Techno">
                 <span class="text-[12px] hover:underline">Techno</span>
               </a>
              </div>
              <div class="flex flex-col gap-2 items-center text-center -mt-1">
               <a href="#">
-                <img width="100px" src="./img/camtech.png" alt="CamTech">
+                <img src="./img/camtech.png" alt="CamTech">
                 <span class="text-[12px] hover:underline">CamTech</span>
               </a>
              </div>
@@ -147,19 +343,19 @@
     </div>
 
     <!-- popular courses -->
-    <div class="border-b border-b-gray-300 px-16 pt-4">
-        <div class="">
-            <h1 class="text-2xl font-bold">Popular</h1>
+    <div class="border-b border-b-gray-300 px-4 sm:px-8 lg:px-16 pt-4">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold">Popular</h1>
         </div>
-      <div class="py-6 flex gap-8 mx-auto justify-center">
+      <div class="py-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
 
         <!-- python -->
-        <div class="border border-gray-300 rounded-2xl w-[300px] px-8 py-4 cursor-pointer hover:border-blue-400">
+        <div class="course-card border border-gray-300 rounded-2xl px-6 sm:px-8 py-4 cursor-pointer hover:border-blue-400 hover:shadow-lg transition-all duration-300 scroll-reveal">
           <div class="bg-amber-100 rounded-xl px-8 py-4">
             <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/python.webp" alt="python">
           </div>
-          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Python for Beginner</h2>
-          <p class="text-[14px]">By: JomNum Tech</p>
+          <h2 class="course-title text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500 transition-colors">Python for Beginner</h2>
+          <p class="course-provider text-[14px]">By: JomNum Tech</p>
           <p class="text-[14px]">Hours: 45 hr</p>
 
           <div class="flex justify-between">
@@ -176,16 +372,17 @@
                 <i class="fa-solid fa-star-half-stroke"></i>
               </div>
             </div>
-            <span class="text-[14px] text-gray-500 mr-0">Free</span>
+            <span class="text-[14px] text-green-600 font-bold">Free</span>
           </div>
         </div>
+
         <!-- Fullstack web -->
-        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+        <div class="course-card border border-gray-300 rounded-2xl px-6 sm:px-8 py-4 cursor-pointer hover:border-blue-400 hover:shadow-lg transition-all duration-300 scroll-reveal">
           <div class="bg-blue-100 rounded-xl px-8 py-4">
             <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/istad.png" alt="fullstack">
           </div>
-          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Fullstack Web Development</h2>
-          <p class="text-[14px]">By: ISTAD</p>
+          <h2 class="course-title text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500 transition-colors">Fullstack Web Development</h2>
+          <p class="course-provider text-[14px]">By: ISTAD</p>
           <p class="text-[14px]">Hours: 75 hr</p>
 
           <div class="flex justify-between">
@@ -205,13 +402,14 @@
             <span class="text-[14px] text-gray-500 mr-0">$500</span>
           </div>
         </div>
+
         <!-- computer science -->
-        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+        <div class="course-card border border-gray-300 rounded-2xl px-6 sm:px-8 py-4 cursor-pointer hover:border-blue-400 hover:shadow-lg transition-all duration-300 scroll-reveal">
           <div class="bg-gray-100 rounded-xl px-8 py-4">
-            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/aupp.png" alt="fullstack">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/aupp.png" alt="cs">
           </div>
-          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Computer Science</h2>
-          <p class="text-[14px]">By: AUPP</p>
+          <h2 class="course-title text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500 transition-colors">Computer Science</h2>
+          <p class="course-provider text-[14px]">By: AUPP</p>
           <p class="text-[14px]">Hours: 75 hr</p>
 
           <div class="flex justify-between">
@@ -231,13 +429,14 @@
             <span class="text-[14px] text-gray-500 mr-0">$899</span>
           </div>
         </div>
+
         <!-- data science -->
-        <div class="border border-gray-300 rounded-2xl px-8 py-4 w-[300px] cursor-pointer hover:border-blue-400">
+        <div class="course-card border border-gray-300 rounded-2xl px-6 sm:px-8 py-4 cursor-pointer hover:border-blue-400 hover:shadow-lg transition-all duration-300 scroll-reveal">
           <div class="bg-red-200 rounded-xl px-8 py-4">
-            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/RUPP.png" alt="fullstack">
+            <img class="mx-auto hover:scale-110 transition-all duration-300" width="100px" src="./img/RUPP.png" alt="data science">
           </div>
-          <h2 class="text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500">Data Science</h2>
-          <p class="text-[14px]">By: RUPP</p>
+          <h2 class="course-title text-center text-[16px] font-bold mt-3 pb-2 border-b border-b-gray-300 hover:text-blue-500 transition-colors">Data Science</h2>
+          <p class="course-provider text-[14px]">By: RUPP</p>
           <p class="text-[14px]">Hours: 75 hr</p>
 
           <div class="flex justify-between">
@@ -260,74 +459,108 @@
       </div>
     </div>
        
+    <!-- Scroll-to-top button -->
+    <button id="scroll-top-btn" class="scroll-top-btn fixed bottom-20 right-4 bg-gray-800 hover:bg-gray-900 text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer shadow-lg z-40 transition-colors">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-
-
-
-
-
-    <!-- floating btn support -->
-    <div>
-      <button class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-70 hover:scale-110">
+    <!-- AI Chat floating btn -->
+    <button id="chat-btn" class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-90 hover:scale-110 transition-all duration-300 shadow-lg z-40">
         <i class="fa-solid fa-robot" title="Assistant"></i>
-      </button>
+    </button>
+
+    <!-- Chat Panel -->
+    <div id="chat-panel" class="chat-panel fixed bottom-20 right-4 w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden" style="height: 480px;">
+        <!-- Chat header -->
+        <div class="bg-linear-to-r from-blue-500 to-blue-600 px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/20 rounded-full p-2">
+                    <i class="fa-solid fa-robot text-white"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm">CamCourses AI</h3>
+                    <p class="text-blue-100 text-xs">Always here to help</p>
+                </div>
+            </div>
+            <button id="chat-close" class="text-white/70 hover:text-white transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+        <!-- Chat body -->
+        <div id="chat-body" class="flex-1 overflow-y-auto px-4 py-4 space-y-1 bg-gray-50">
+            <div class="flex justify-start mb-3">
+                <div class="chat-msg-bot">
+                    Hi! 👋 I'm the CamCourses assistant. Ask me about courses, pricing, or anything else!
+                </div>
+            </div>
+            <!-- Quick replies -->
+            <div class="flex flex-wrap gap-2 mb-2">
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="courses">📚 Courses</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="free">🆓 Free courses</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="price">💰 Pricing</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="help">❓ Help</button>
+            </div>
+        </div>
+        <!-- Chat input -->
+        <div class="border-t border-gray-200 px-4 py-3 flex gap-2 bg-white">
+            <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm outline-none focus:border-blue-500 transition-colors">
+            <button id="chat-send" class="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+        </div>
     </div>
 
     <!-- footer -->
-    <footer class="bg-gray-100 text-gray-900 py-8">
-      <div class="flex container mx-auto gap-64 justify-center">
-        <div class="w-fit">
+    <footer class="bg-gray-100 text-gray-900 py-8 scroll-reveal">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <a href="#" class="text-2xl font-bold">
               <i class="fa-solid fa-code"></i>
               CamCode
             </a>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="leading-8">
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">About Us</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Terms &amp; Conditions</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Privacy Policy</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">About Us</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Terms &amp; Conditions</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Privacy Policy</a></li>
               </ul>
           </div>
         </div>
-        <div class="w-fit">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <h3 class="text-2xl font-bold">Contact Us</h3>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
             </ul>
           </div>
         </div>
-        <div class="w-fit">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <h3 class="text-2xl font-bold">Follow Us</h3>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <hr class="border-gray-700 mt-8 mx-16">
-      <div class="container mx-auto px-4 flex justify-center">
-        <div class="flex gap-16 mx-auto">
-          <p class="text-gray-700">© 2026 CamCode. All rights reserved.</p>
-        </div>
+      <hr class="border-gray-300 mt-8 mx-4 sm:mx-16">
+      <div class="px-4 flex justify-center mt-4">
+        <p class="text-gray-700 text-sm sm:text-base">© 2026 CamCode. All rights reserved.</p>
       </div>
     </footer>
-        
 
-
-
+    <script src="./js/main.js"></script>
 </body>
 </html>

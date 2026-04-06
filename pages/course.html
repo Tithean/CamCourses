@@ -11,18 +11,18 @@
   </head>
   <body class="bg-gray-100">
 
-    <header class="px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-100">
-        <nav class="flex justify-between items-center text-center w-full">
-            <div class="flex justify-between gap-6">
-                <a href="#">
-                    <h1 class="text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+    <header class="px-4 sm:px-8 lg:px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-50">
+        <nav class="flex justify-between items-center w-full">
+            <div class="flex items-center gap-4 lg:gap-6">
+                <a href="../index.html">
+                    <h1 class="text-2xl sm:text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
                         &lt;/&gt;CamCourses
                     </h1>
                 </a>
-                <ul class="flex justify-between gap-6 mt-2">
-                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                <ul class="hidden lg:flex gap-4 xl:gap-6 mt-1">
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl cursor-pointer">
                         <a href="#">Explore</a>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down ml-1"></i>
                     </li>
                     <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
                         <a href="#">My Courses</a>
@@ -31,31 +31,82 @@
                         <a href="#">Programs</a>
                     </li>
                 </ul>
-                <div class="flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-2 w-[360px]">
-                    <input class="bg-transparent border-none outline-none w-full" type="text" placeholder="What do you want to learn?">
+                <div class="hidden md:flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-1 w-48 lg:w-72 xl:w-[360px] transition-all focus-within:border-blue-500">
+                    <input class="bg-transparent border-none outline-none w-full py-1" type="text" placeholder="What do you want to learn?">
                     <button>
-                        <i class="fa-solid fa-search"></i>
+                        <i class="fa-solid fa-search text-gray-500"></i>
                     </button>
                 </div>
             </div>
-            <div class="flex gap-4 mt-2 text-lg text-gray-900">
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+            <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
+                <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors hidden sm:block">
                   <a href="">
                       <i class="fa-solid fa-globe"></i>
                   </a>
                 </div>
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors">
                   <a href="">
                       <i class="fa-solid fa-bell"></i>
                   </a>
                 </div>
-                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
-                  <a href="">
+                <!-- Account dropdown -->
+                <div class="relative">
+                  <button id="account-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
                       <i class="fa-solid fa-user"></i>
-                  </a>
+                  </button>
+                  <div id="account-panel" class="notification-panel absolute right-0 top-full mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+                          <div class="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">T</div>
+                          <div>
+                              <p class="font-bold text-gray-800 text-sm">Thean</p>
+                              <p class="text-xs text-gray-500">thean@camcourses.com</p>
+                          </div>
+                      </div>
+                      <div class="py-2">
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-book-open text-blue-500 w-5 text-center"></i> My Courses
+                              <span class="ml-auto bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full font-semibold">3</span>
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-certificate text-amber-500 w-5 text-center"></i> Certificates
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-bookmark text-purple-500 w-5 text-center"></i> Saved Courses
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-chart-line text-green-500 w-5 text-center"></i> Progress
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-gear text-gray-500 w-5 text-center"></i> Settings
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-circle-question text-gray-500 w-5 text-center"></i> Help Center
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-red-50 transition-colors text-sm text-red-600">
+                              <i class="fa-solid fa-right-from-bracket w-5 text-center"></i> Sign Out
+                          </a>
+                      </div>
+                  </div>
                 </div>
+                <button id="hamburger-btn" class="lg:hidden rounded-full hover:bg-gray-200 px-2 py-1 cursor-pointer transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
             </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden">
+            <div class="pt-4 pb-2 space-y-1">
+                <div class="flex border border-gray-300 rounded-2xl px-4 py-2 mb-3 md:hidden focus-within:border-blue-500">
+                    <input class="bg-transparent border-none outline-none w-full text-sm" type="text" placeholder="What do you want to learn?">
+                    <button><i class="fa-solid fa-search text-gray-500"></i></button>
+                </div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">Explore</a>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">My Courses</a>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">Programs</a>
+            </div>
+        </div>
     </header>
 
     <div id="root">
@@ -2251,63 +2302,65 @@
       </div>
     </div>
 
-    <div>
-      <button class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-70 hover:scale-110">
+    <!-- Scroll-to-top button -->
+    <button id="scroll-top-btn" class="scroll-top-btn fixed bottom-20 right-4 bg-gray-800 hover:bg-gray-900 text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer shadow-lg z-40 transition-colors">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <button id="chat-btn" class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-90 hover:scale-110 transition-all duration-300 shadow-lg z-40">
         <i class="fa-solid fa-robot" title="Assistant"></i>
-      </button>
-    </div>
+    </button>
 
     <footer class="bg-gray-100 text-gray-900 py-8">
-      <div class="flex container mx-auto gap-64 justify-center">
-        <div class="w-fit">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <a href="#" class="text-2xl font-bold">
               <i class="fa-solid fa-code"></i>
               CamCode
             </a>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="leading-8">
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">About Us</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Terms &amp; Conditions</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Privacy Policy</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">About Us</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Terms &amp; Conditions</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Privacy Policy</a></li>
               </ul>
           </div>
         </div>
-        <div class="w-fit">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <h3 class="text-2xl font-bold">Contact Us</h3>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
             </ul>
           </div>
         </div>
-        <div class="w-fit">
+        <div>
           <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
             <h3 class="text-2xl font-bold">Follow Us</h3>
           </div>
-          <div class="w-full">
+          <div>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
-              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <hr class="border-gray-700 mt-8 mx-16">
-      <div class="container mx-auto px-4 flex justify-center">
-        <div class="flex gap-16 mx-auto">
-          <p class="text-gray-700">© 2026 CamCode. All rights reserved.</p>
-        </div>
+      <hr class="border-gray-300 mt-8 mx-4 sm:mx-16">
+      <div class="px-4 flex justify-center mt-4">
+        <p class="text-gray-700 text-sm sm:text-base">© 2026 CamCode. All rights reserved.</p>
       </div>
     </footer>
 
+    <script src="../js/main.js"></script>
   </body>
 </html>

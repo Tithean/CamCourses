@@ -1,17 +1,178 @@
 @import "tailwindcss";
 
-body{
+/* ===== Base ===== */
+html {
     scroll-behavior: smooth;
 }
-.uni-logo .cadt-logo{
+
+body {
+    overflow-x: hidden;
+}
+
+/* ===== University Logo Section ===== */
+.uni-logo .cadt-logo {
     width: auto;
     height: 93px;
 }
-.uni-logo img{
+.uni-logo img {
     transition: all 0.3s ease;
     width: 120px;
     height: 120px;
 }
-.uni-logo img:hover{
+.uni-logo img:hover {
     transform: scale(1.1);
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+    opacity: 0;
+}
+.mobile-menu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* ===== Dropdown ===== */
+.dropdown-menu {
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+}
+.dropdown-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Notification Panel ===== */
+.notification-panel {
+    transform: translateY(-8px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+}
+.notification-panel.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Chat Panel ===== */
+.chat-panel {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+}
+.chat-panel.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Scroll-to-Top ===== */
+.scroll-top-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.scroll-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ===== Scroll Reveal Animations ===== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-reveal:nth-child(2) { transition-delay: 0.1s; }
+.scroll-reveal:nth-child(3) { transition-delay: 0.2s; }
+.scroll-reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ===== Chat message bubbles ===== */
+.chat-msg-bot {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-radius: 2px 16px 16px 16px;
+    padding: 10px 14px;
+    max-width: 85%;
+    font-size: 14px;
+    color: #1e3a5f;
+    animation: msgSlideIn 0.3s ease forwards;
+}
+.chat-msg-user {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 16px 2px 16px 16px;
+    padding: 10px 14px;
+    max-width: 85%;
+    font-size: 14px;
+    color: #fff;
+    margin-left: auto;
+    animation: msgSlideIn 0.3s ease forwards;
+}
+
+@keyframes msgSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Typing indicator ===== */
+.typing-dots span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background: #93c5fd;
+    border-radius: 50%;
+    animation: typingBounce 1.2s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+}
+
+/* ===== Responsive overrides ===== */
+@media (max-width: 768px) {
+    .uni-logo img {
+        width: 80px;
+        height: 80px;
+    }
+    .uni-logo .cadt-logo {
+        height: 63px;
+    }
+}
+
+@media (max-width: 480px) {
+    .uni-logo img {
+        width: 64px;
+        height: 64px;
+    }
+    .uni-logo .cadt-logo {
+        height: 50px;
+    }
 }
