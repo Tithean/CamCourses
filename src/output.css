@@ -505,8 +505,8 @@
     }
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-\[url\(\'\/img\/rupp_bg\.png\'\)\] {
-    background-image: url('/img/rupp_bg.png');
+  .bg-\[url\(\'\/img\/istad_bg\.png\'\)\] {
+    background-image: url('/img/istad_bg.png');
   }
   .from-blue-400 {
     --tw-gradient-from: var(--color-blue-400);
