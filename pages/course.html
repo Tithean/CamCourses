@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CamCode</title>
     <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="bg-gray-100">
+
+    <header class="px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-100">
+        <nav class="flex justify-between items-center text-center w-full">
+            <div class="flex justify-between gap-6">
+                <a href="#">
+                    <h1 class="text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                        &lt;/&gt;CamCourses
+                    </h1>
+                </a>
+                <ul class="flex justify-between gap-6 mt-2">
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">Explore</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">My Courses</a>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">Programs</a>
+                    </li>
+                </ul>
+                <div class="flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-2 w-[360px]">
+                    <input class="bg-transparent border-none outline-none w-full" type="text" placeholder="What do you want to learn?">
+                    <button>
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-4 mt-2 text-lg text-gray-900">
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-globe"></i>
+                  </a>
+                </div>
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-bell"></i>
+                  </a>
+                </div>
+                <div class="rounded-full hover:border hover:border-gray-300 px-[7px] py-[4px]">
+                  <a href="">
+                      <i class="fa-solid fa-user"></i>
+                  </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div id="root">
       <div>
         <main class="container mx-auto px-4 py-12">
@@ -2196,12 +2245,61 @@
               </div>
             </div>
           </div>
-          <div class="text-center mt-8 text-3xl font-batbombong">
-            <span class="text-orange-500">I wish you </span>
-            <span class="text-gray-800">success!</span>
-          </div>
         </main>
       </div>
     </div>
+
+    <footer class="bg-gray-100 text-gray-900 py-8">
+      <div class="flex container mx-auto gap-64 justify-center">
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <a href="#" class="text-2xl font-bold">
+              <i class="fa-solid fa-code"></i>
+              CamCode
+            </a>
+          </div>
+          <div class="w-full">
+            <ul class="leading-8">
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">About Us</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Terms &amp; Conditions</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline">Privacy Policy</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Contact Us</h3>
+          </div>
+          <div class="w-full">
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-envelope"></i>  Email: camcode@gmail.com</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-fit">
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Follow Us</h3>
+          </div>
+          <div class="w-full">
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-gray-700 mt-8 mx-16">
+      <div class="container mx-auto px-4 flex justify-center">
+        <div class="flex gap-16 mx-auto">
+          <p class="text-gray-700">© 2026 CamCode. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
