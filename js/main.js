@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const chatResponses = {
     'hello': 'Hi there! 👋 Welcome to CamCourses. How can I help you?',
-    'hi': 'Hello! 😊 What can I help you with today?',
+    'hi': 'Hello! 😊 What can I help you with today?', 
     'courses': 'We offer courses in Python, Fullstack Web Dev, Data Science, Computer Science, and more! Check out our "All Courses" page.',
     'python': 'Our Python for Beginner course is FREE and taught by JomNum Tech — 45 hours of content! ⭐ 4.5 rating.',
     'free': 'Yes! We have several free courses including Python for Beginners and more. Click "All Courses" to browse.',
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'help': 'I can help with:\n• Course information\n• Pricing questions\n• How to enroll\n• Contact details\nJust ask!',
     'enroll': 'To enroll in a course, click "All Courses", find your course, and click "រៀនឥឡូវនេះ" (Learn Now)!',
     'premium': 'Our Premium plan unlocks exclusive content, certificates, and priority support. Click the Premium button at the top!',
+    'Courses': 'There are a lot of coures here you can find can learn',
   };
 
   function getResponse(msg) {
