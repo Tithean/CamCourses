@@ -2314,9 +2314,51 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- AI Chat floating btn -->
     <button id="chat-btn" class="fixed bottom-4 right-4 bg-linear-to-r from-blue-400 to-blue-500 rounded-full p-3 text-white text-2xl cursor-pointer hover:opacity-90 hover:scale-110 transition-all duration-300 shadow-lg z-40">
         <i class="fa-solid fa-robot" title="Assistant"></i>
     </button>
+
+    <!-- Chat Panel -->
+    <div id="chat-panel" class="chat-panel fixed bottom-20 right-4 w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden" style="height: 480px;">
+        <!-- Chat header -->
+        <div class="bg-linear-to-r from-blue-500 to-blue-600 px-5 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/20 rounded-full p-2">
+                    <i class="fa-solid fa-robot text-white"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm">CamCourses AI</h3>
+                    <p class="text-blue-100 text-xs">Always here to help</p>
+                </div>
+            </div>
+            <button id="chat-close" class="text-white/70 hover:text-white transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+        <!-- Chat body -->
+        <div id="chat-body" class="flex-1 overflow-y-auto px-4 py-4 space-y-1 bg-gray-50">
+            <div class="flex justify-start mb-3">
+                <div class="chat-msg-bot">
+                    Hi! 👋 I'm the CamCourses assistant. Ask me about courses, pricing, or anything else!
+                </div>
+            </div>
+            <!-- Quick replies -->
+            <div class="flex flex-wrap gap-2 mb-2">
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="courses">📚 Courses</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="free">🆓 Free courses</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="price">💰 Pricing</button>
+                <button class="quick-reply text-xs bg-white border border-blue-200 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer" data-msg="help">❓ Help</button>
+            </div>
+        </div>
+        <!-- Chat input -->
+        <div class="border-t border-gray-200 px-4 py-3 flex gap-2 bg-white">
+            <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm outline-none focus:border-blue-500 transition-colors">
+            <button id="chat-send" class="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center transition-colors cursor-pointer">
+                <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+        </div>
+    </div>
 
     <footer class="bg-gray-100 text-gray-900 py-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto">
@@ -2368,6 +2410,7 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
+
   </body>
 </html>
