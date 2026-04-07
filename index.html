@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,6 +86,12 @@
             </div>
             <!-- Right: Icons + Hamburger -->
             <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle hidden sm:flex" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                    <span class="toggle-thumb">
+                        <i class="fa-solid fa-sun"></i>
+                    </span>
+                </button>
                 <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors hidden sm:block">
                   <a href="">
                       <i class="fa-solid fa-globe"></i>
@@ -195,6 +201,15 @@
                 <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors">
                     <i class="fa-solid fa-globe mr-2"></i> Language
                 </a>
+                <!-- Mobile Theme Toggle -->
+                <div class="flex items-center justify-between px-4 py-3">
+                    <span class="text-gray-700 font-medium"><i class="fa-solid fa-circle-half-stroke mr-2"></i> Dark Mode</span>
+                    <button id="theme-toggle-mobile" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                        <span class="toggle-thumb">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -278,7 +293,7 @@
                 <img src="./assets/techno.png" alt="Techno">
                 <span class="text-[12px] hover:underline">Techno</span>
               </a>
-             </div>
+             </div> 
              <div class="flex flex-col gap-2 items-center text-center -mt-1">
               <a href="#">
                 <img src="./assets/camtech.png" alt="CamTech">

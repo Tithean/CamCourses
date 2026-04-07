@@ -39,6 +39,11 @@
                 </div>
             </div>
             <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
+              <button id="theme-toggle" class="theme-toggle hidden sm:flex" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                    <span class="toggle-thumb">
+                        <i class="fa-solid fa-sun"></i>
+                    </span>
+                </button>
                 <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors hidden sm:block">
                   <a href="">
                       <i class="fa-solid fa-globe"></i>
@@ -49,6 +54,8 @@
                       <i class="fa-solid fa-bell"></i>
                   </a>
                 </div>
+
+                
                 <!-- Account dropdown -->
                 <div class="relative">
                   <button id="account-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">

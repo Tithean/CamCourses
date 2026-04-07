@@ -1,5 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ─── Theme Toggle (Dark/Light Mode) ──────────────────────────────────
+  const themeToggle       = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const htmlEl            = document.documentElement;
+
+  // Load saved theme from localStorage (default: light)
+  function loadTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      htmlEl.classList.add('dark');
+    } else {
+      htmlEl.classList.remove('dark');
+    }
+    updateToggleIcons();
+  }
+
+  // Toggle between dark and light
+  function toggleTheme() {
+    htmlEl.classList.toggle('dark');
+    const isDark = htmlEl.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateToggleIcons();
+  }
+
+  // Update the sun/moon icon on all toggle buttons
+  function updateToggleIcons() {
+    const isDark = htmlEl.classList.contains('dark');
+    document.querySelectorAll('.theme-toggle .toggle-thumb i').forEach(icon => {
+      icon.className = isDark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    });
+  }
+
+  // Apply saved theme immediately
+  loadTheme();
+
+  // Bind click events
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+
   // ─── Mobile Menu Toggle ────────────────────────────────────────────
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileMenu   = document.getElementById('mobile-menu');
