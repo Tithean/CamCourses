@@ -1,0 +1,582 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CamCourse | Fullstack Web Development</title>
+    <!-- Tailwind CSS v3 + Inter Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+        * {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+        }
+        .course-card-hover {
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .course-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        }
+        .module-item {
+            transition: background 0.2s ease;
+        }
+        .module-item:hover {
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+        ::selection {
+            background: #a5b4fc;
+            color: #0f172a;
+        }
+        /* custom badge */
+        .fullstack-badge {
+            background: linear-gradient(120deg, #4f46e5 0%, #7c3aed 100%);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="antialiased">
+
+    <!-- navigation -->
+        <header class="px-4 sm:px-8 lg:px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-50">
+        <nav class="flex justify-between items-center w-full">
+            <!-- Left: Logo + Desktop Nav -->
+            <div class="flex items-center gap-4 lg:gap-6">
+                <a href="#">
+                    <h1 class="text-2xl sm:text-3xl font-bold text-blue-500">
+                        &lt;/&gt;CamCourses
+                    </h1>
+                </a>
+                <!-- Desktop nav links (hidden on mobile) -->
+                <ul class="hidden lg:flex gap-4 xl:gap-6 mt-1">
+                    <li id="explore-btn" class="relative text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl cursor-pointer select-none">
+                        <a href="#">Explore</a>
+                        <i class="fa-solid fa-angle-down ml-1"></i>
+                        <!-- Explore Dropdown -->
+                        <div id="explore-menu" class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                            <div class="py-2">
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-globe text-blue-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Web Development</p>
+                                        <p class="text-xs text-gray-500">HTML, CSS, JavaScript, React</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-database text-green-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Data Science</p>
+                                        <p class="text-xs text-gray-500">Python, Pandas, Visualization</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-robot text-purple-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">AI & Machine Learning</p>
+                                        <p class="text-xs text-gray-500">Neural Networks, NLP, CV</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-server text-orange-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">DevOps & Cloud</p>
+                                        <p class="text-xs text-gray-500">Docker, AWS, CI/CD</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-mobile-screen text-cyan-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Mobile Development</p>
+                                        <p class="text-xs text-gray-500">Flutter, React Native</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-gray-100 px-4 py-3 bg-gray-50">
+                                <a href="./pages/course.html" class="text-blue-600 text-sm font-semibold hover:underline">View All Courses →</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">My Courses</a>
+                    </li>
+                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
+                        <a href="#">Programs</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- Right: Icons + Hamburger -->
+            <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle hidden sm:flex" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                    <span class="toggle-thumb">
+                        <i class="fa-solid fa-sun"></i>
+                    </span>
+                </button>
+                <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors hidden sm:block">
+                  <a href="">
+                      <i class="fa-solid fa-globe"></i>
+                  </a>
+                </div>
+                <!-- Bell with notification panel -->
+                <div class="relative">
+                  <button id="bell-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
+                      <i class="fa-solid fa-bell"></i>
+                      <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+                  </button>
+                  <!-- Notification Panel -->
+                  <div id="notification-panel" class="notification-panel absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <div class="px-4 py-3 border-b border-gray-100">
+                          <h3 class="font-bold text-gray-800">Notifications</h3>
+                      </div>
+                      <div class="px-4 py-3 border-t border-gray-100 text-center">
+                          <a href="#" class="text-sm text-blue-600 hover:underline font-semibold">View all notifications</a>
+                      </div>
+                  </div>
+                </div>
+                <!-- Account dropdown -->
+                <div class="relative">
+                  <button id="account-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
+                      <i class="fa-solid fa-user"></i>
+                  </button>
+                  <!-- Account Panel -->
+                  <div id="account-panel" class="notification-panel absolute right-0 top-full mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <!-- Profile header -->
+                      <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+                          <div class="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-gray-800 text-sm">User</p>
+                              <p class="text-xs text-gray-500">user@gmail.com</p>
+                          </div>
+                      </div>
+                      <!-- Menu items -->
+                      <div class="py-2">
+                          <a href="/pages/signup.html" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-arrow-right-to-bracket text-center"></i>
+                              Log in
+                          </a>
+                          <a href="/pages/signup.html" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class= "fa-solid fa-pen text-center"></i>
+                              Regester
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-gear text-gray-500 w-5 text-center"></i>
+                              Settings
+                          </a>
+                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-circle-question text-gray-500 w-5 text-center"></i>
+                              Help Center
+                          </a>
+                          <div class="border-t border-gray-100 my-1"></div>
+                      </div>
+                  </div>
+                </div>
+                <!-- Hamburger button (mobile only) -->
+                <button id="hamburger-btn" class="lg:hidden rounded-full hover:bg-gray-200 px-2 py-1 cursor-pointer transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden">
+            <div class="pt-4 pb-2 space-y-1">
+                <!-- Mobile Search -->
+                <div class="flex border border-gray-300 rounded-2xl px-4 py-2 mb-3 md:hidden focus-within:border-blue-500">
+                    <input class="bg-transparent border-none outline-none w-full text-sm" type="text" placeholder="What do you want to learn?">
+                    <button>
+                        <i class="fa-solid fa-search text-gray-500"></i>
+                    </button>
+                </div>
+                <!-- Mobile nav links -->
+                <div>
+                    <button id="mobile-explore-btn" class="w-full flex justify-between items-center text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors cursor-pointer">
+                        <span class="font-medium">Explore</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div id="mobile-explore-menu" class="hidden pl-4 space-y-1">
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-globe text-blue-500 w-4"></i> Web Development
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-database text-green-500 w-4"></i> Data Science
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-robot text-purple-500 w-4"></i> AI & Machine Learning
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-server text-orange-500 w-4"></i> DevOps & Cloud
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    My Courses
+                </a>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    Programs
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors">
+                    <i class="fa-solid fa-globe mr-2"></i> Language
+                </a>
+                <!-- Mobile Theme Toggle -->
+                <div class="flex items-center justify-between px-4 py-3">
+                    <span class="text-gray-700 font-medium"><i class="fa-solid fa-circle-half-stroke mr-2"></i> Dark Mode</span>
+                    <button id="theme-toggle-mobile" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                        <span class="toggle-thumb">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <!-- Header Section -->
+        <div class="relative mb-12 md:mb-16">
+            <div class="absolute inset-0 -z-10 w-full h-full opacity-30 blur-3xl bg-gradient-to-r from-indigo-200 via-purple-100 to-pink-200 rounded-full"></div>
+            <div class="text-center md:text-left md:flex md:justify-between md:items-end gap-6 flex-wrap">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm rounded-full px-4 py-1.5 shadow-sm border border-indigo-100">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
+                        </span>
+                        <span class="text-xs font-semibold text-indigo-700 tracking-wide">FULLSTACK TRACK · BACKEND + FRONTEND</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-indigo-800">Fullstack Web Development</h1>
+                    <p class="text-lg text-slate-600 max-w-2xl leading-relaxed">
+                        Master both frontend and backend development to become a complete fullstack engineer. 
+                        This comprehensive course covers modern frontend frameworks (React, Tailwind) and robust backend technologies (Node.js, Express, Databases). 
+                        You'll learn how to build end-to-end web applications, design RESTful APIs, manage databases, and deploy fullstack projects to the cloud.
+                    </p>
+                </div>
+                <!-- Quick Info Card -->
+                <div class="mt-6 md:mt-0 flex-shrink-0 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-indigo-100 p-5 flex flex-col items-start gap-2 w-full md:w-64">
+                    <div class="flex items-center gap-2 text-indigo-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold">Course Snapshot</span>
+                    </div>
+                    <div class="flex justify-between w-full text-sm">
+                        <span class="text-slate-500">Grading</span>
+                        <span class="font-bold text-indigo-800">7.00%</span>
+                    </div>
+                    <div class="flex justify-between w-full text-sm">
+                        <span class="text-slate-500">Total Points</span>
+                        <span class="font-bold text-indigo-800">100 pts</span>
+                    </div>
+                    <div class="mt-1 h-px w-full bg-indigo-100"></div>
+                    <div class="flex items-center gap-1 text-xs text-indigo-600 mt-1">
+                        <span class="bg-indigo-100 px-2 py-0.5 rounded-full">🚀 6 Core Modules + Capstone</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Highlights Section (Fullstack) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+            <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-indigo-50 p-6 md:p-7 course-card-hover">
+                <div class="flex items-center gap-2 border-b border-indigo-100 pb-3 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" class="w-6 h-6 text-indigo-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                    </svg>
+                    <h2 class="text-xl font-semibold text-slate-800">About This Fullstack Course</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    This intensive program transforms you into a job-ready fullstack developer. You'll start with frontend fundamentals (HTML, CSS, JavaScript, React), then dive deep into backend engineering (Node.js, Express, MongoDB/PostgreSQL). Learn authentication, security, API design, and deployment strategies. By the end, you'll have built multiple fullstack applications and a professional capstone project for your portfolio.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-3">
+                    <span class="inline-flex items-center gap-1 text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full"><span class="font-bold">✓</span> React + Hooks</span>
+                    <span class="inline-flex items-center gap-1 text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full"><span class="font-bold">✓</span> Node.js & Express</span>
+                    <span class="inline-flex items-center gap-1 text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full"><span class="font-bold">✓</span> RESTful APIs</span>
+                    <span class="inline-flex items-center gap-1 text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full"><span class="font-bold">✓</span> Databases (SQL + NoSQL)</span>
+                    <span class="inline-flex items-center gap-1 text-sm bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full"><span class="font-bold">✓</span> JWT Auth & Security</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl shadow-md border border-indigo-100 p-6 flex flex-col justify-between course-card-hover">
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-indigo-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                        </svg>
+                        <h3 class="font-semibold text-slate-800">Fullstack Metrics</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between border-b border-indigo-50 pb-1">
+                            <span class="text-slate-500">Weighted Grade</span>
+                            <span class="font-medium text-indigo-800">7.00%</span>
+                        </div>
+                        <div class="flex justify-between border-b border-indigo-50 pb-1">
+                            <span class="text-slate-500">Total Points</span>
+                            <span class="font-medium text-indigo-800">100 points</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Level</span>
+                            <span class="font-medium text-indigo-800">Intermediate → Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 pt-2">
+                    <div class="w-full bg-indigo-100 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full w-[45%]"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">45% of content completed · 6 modules total</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Syllabus Section - Fullstack Modules -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="h-8 w-1.5 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Fullstack Syllabus: Frontend + Backend</h2>
+                <div class="ml-auto hidden sm:block">
+                    <span class="text-xs font-medium bg-white/70 px-3 py-1 rounded-full shadow-sm text-indigo-700">📖 6 modules + final capstone</span>
+                </div>
+            </div>
+            
+            <div class="space-y-5">
+                <!-- Module 1: Frontend Foundations -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">1</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 1: Frontend Foundations (HTML, CSS, JS)</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 8 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 5 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> 2 Challenges</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Master modern HTML5, CSS3 (Flexbox, Grid, Animations), and JavaScript ES6+. Build responsive layouts, interactive components, and prepare for React.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🎨 Semantic HTML</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">💎 Tailwind CSS</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">⚡ JS DOM Manipulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2: React & Modern Frontend -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">2</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 2: React & Modern Frontend</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 6 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 4 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> 1 Challenge</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Dive into React: components, props, state, hooks (useState, useEffect), context API, routing with React Router, and state management.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">⚛️ React Components</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🪝 Hooks & Context</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🧭 React Router</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3: Backend Intro - Node.js & Express -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">3</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 3: Backend with Node.js & Express</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 7 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 4 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> 2 Challenges</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Learn server-side JavaScript with Node.js, build RESTful APIs using Express, handle HTTP requests, middleware, error handling, and environment variables.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🟢 Node.js Runtime</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🚂 Express.js</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🌐 REST API Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4: Databases (SQL & MongoDB) -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">4</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 4: Databases (PostgreSQL & MongoDB)</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 6 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 3 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> 1 Challenge</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Work with both SQL (PostgreSQL) and NoSQL (MongoDB) databases. Learn schema design, migrations, Mongoose ORM, and database integration with Node.js.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🐘 PostgreSQL</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🍃 MongoDB</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">📊 Mongoose ODM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 5: Authentication & Security -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">5</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 5: Authentication & Security</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 5 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 3 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> 1 Challenge</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Implement secure authentication using JWT, bcrypt password hashing, OAuth2, role-based access control, and protect routes against common vulnerabilities.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🔐 JWT Tokens</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🛡️ Bcrypt</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">👥 RBAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 6: Deployment & Fullstack Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md">
+                    <div class="flex flex-wrap items-center justify-between p-5 md:p-6 border-b border-slate-100 bg-slate-50/40">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">6</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-slate-800">Module 6: Deployment & Fullstack Capstone</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-2 sm:mt-0 text-sm">
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">📄</span> 6 Lessons</span>
+                            <span class="inline-flex items-center gap-1 text-slate-600 bg-slate-100 px-3 py-1 rounded-full"><span class="font-medium">< ></span> 2 Exercises</span>
+                            <span class="inline-flex items-center gap-1 text-amber-600 bg-amber-50 px-3 py-1 rounded-full"><span class="font-medium">⬇️</span> Final Capstone</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 text-slate-600 leading-relaxed">
+                        <p class="mb-3">Deploy fullstack applications using Vercel, Netlify, or Render. Learn CI/CD, environment configuration, and build a complete MERN or PERN stack capstone project.</p>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">☁️ Cloud Deployment</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🔄 CI/CD Basics</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded-md">🎓 Capstone Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capstone highlight -->
+                <div class="bg-gradient-to-r from-indigo-50/50 to-transparent rounded-xl p-5 flex items-center justify-between flex-wrap gap-4">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-indigo-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.456-2.456L14.25 6l1.035-.259a3.375 3.375 0 002.456-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                        </svg>
+                        <span class="font-medium text-slate-700">🎯 Build a real fullstack application from scratch and earn your Fullstack Certificate!</span>
+                    </div>
+                    <a href="#" class="text-indigo-700 bg-white hover:bg-indigo-50 transition px-5 py-2 rounded-full text-sm font-semibold shadow-sm border border-indigo-200">View Full Syllabus →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Challenge & Resource Highlights (Fullstack oriented) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+            <div class="flex items-start gap-4 bg-white/70 rounded-2xl p-5 shadow-sm border border-indigo-50">
+                <div class="bg-indigo-100 rounded-full p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-indigo-700">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800">Real-World Challenges</h4>
+                    <p class="text-sm text-slate-500">Each module includes practical coding challenges: build a REST API, create a React dashboard, integrate authentication, and more.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 bg-white/70 rounded-2xl p-5 shadow-sm border border-indigo-50">
+                <div class="bg-indigo-100 rounded-full p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-indigo-700">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800">Fullstack Toolkit</h4>
+                    <p class="text-sm text-slate-500">Access code repositories, cheat sheets, API testing with Postman, and deployment guides for production-ready apps.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="bg-gray-100 text-gray-900 py-8 scroll-reveal">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto">
+        <div>
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <a href="#" class="text-2xl font-bold">
+                &lt;/&gt;CamCourses
+            </a>
+          </div>
+          <div>
+            <ul class="leading-8">
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">About Us</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Terms &amp; Conditions</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-400 hover:underline transition-colors">Privacy Policy</a></li>
+              </ul>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Contact Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope"></i>  Email: camcourses@gmail.com</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh, Cambodia</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 border-b-2 border-blue-600 w-fit pb-4 mb-4">
+            <h3 class="text-2xl font-bold">Follow Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-blue-400 transition-colors"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-gray-300 mt-8 mx-4 sm:mx-16">
+      <div class="px-4 flex justify-center mt-4">
+        <p class="text-gray-700 text-sm sm:text-base">© 2026 CamCourses. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

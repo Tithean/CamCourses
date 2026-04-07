@@ -13,16 +13,61 @@
 
     <header class="px-4 sm:px-8 lg:px-12 py-4 border-b bg-gray-100/97 border-gray-300 sticky top-0 z-50">
         <nav class="flex justify-between items-center w-full">
+            <!-- Left: Logo + Desktop Nav -->
             <div class="flex items-center gap-4 lg:gap-6">
-                <a href="../index.html">
+                <a href="#">
                     <h1 class="text-2xl sm:text-3xl font-bold bg-linear-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
                         &lt;/&gt;CamCourses
                     </h1>
                 </a>
+                <!-- Desktop nav links (hidden on mobile) -->
                 <ul class="hidden lg:flex gap-4 xl:gap-6 mt-1">
-                    <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl cursor-pointer">
+                    <li id="explore-btn" class="relative text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl cursor-pointer select-none">
                         <a href="#">Explore</a>
                         <i class="fa-solid fa-angle-down ml-1"></i>
+                        <!-- Explore Dropdown -->
+                        <div id="explore-menu" class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                            <div class="py-2">
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-globe text-blue-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Web Development</p>
+                                        <p class="text-xs text-gray-500">HTML, CSS, JavaScript, React</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-database text-green-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Data Science</p>
+                                        <p class="text-xs text-gray-500">Python, Pandas, Visualization</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-robot text-purple-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">AI & Machine Learning</p>
+                                        <p class="text-xs text-gray-500">Neural Networks, NLP, CV</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-server text-orange-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">DevOps & Cloud</p>
+                                        <p class="text-xs text-gray-500">Docker, AWS, CI/CD</p>
+                                    </div>
+                                </a>
+                                <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors">
+                                    <i class="fa-solid fa-mobile-screen text-cyan-500 w-5"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Mobile Development</p>
+                                        <p class="text-xs text-gray-500">Flutter, React Native</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="border-t border-gray-100 px-4 py-3 bg-gray-50">
+                                <a href="./pages/course.html" class="text-blue-600 text-sm font-semibold hover:underline">View All Courses →</a>
+                            </div>
+                        </div>
                     </li>
                     <li class="text-gray-700 px-3 py-1 hover:bg-gray-200 rounded-2xl">
                         <a href="#">My Courses</a>
@@ -31,15 +76,18 @@
                         <a href="#">Programs</a>
                     </li>
                 </ul>
-                <div class="hidden md:flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-1 w-48 lg:w-72 xl:w-[360px] transition-all focus-within:border-blue-500">
-                    <input class="bg-transparent border-none outline-none w-full py-1" type="text" placeholder="What do you want to learn?">
+                <!-- Desktop search bar (hidden on mobile) -->
+                <div class="hidden md:flex border border-gray-300 rounded-4xl px-4 hover:border-gray-600 mt-1 w-48 lg:w-72 xl:w-[360px] transition-all focus-within:border-blue-500 focus-within:shadow-sm">
+                    <input id="search-input" class="bg-transparent border-none outline-none w-full py-1" type="text" placeholder="What do you want to learn?">
                     <button>
                         <i class="fa-solid fa-search text-gray-500"></i>
                     </button>
                 </div>
             </div>
+            <!-- Right: Icons + Hamburger -->
             <div class="flex items-center gap-2 sm:gap-4 mt-1 text-lg text-gray-900">
-              <button id="theme-toggle" class="theme-toggle hidden sm:flex" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-toggle hidden sm:flex" title="Toggle dark/light mode" aria-label="Toggle dark mode">
                     <span class="toggle-thumb">
                         <i class="fa-solid fa-sun"></i>
                     </span>
@@ -49,69 +97,119 @@
                       <i class="fa-solid fa-globe"></i>
                   </a>
                 </div>
-                <div class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors">
-                  <a href="">
+                <!-- Bell with notification panel -->
+                <div class="relative">
+                  <button id="bell-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
                       <i class="fa-solid fa-bell"></i>
-                  </a>
+                      <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+                  </button>
+                  <!-- Notification Panel -->
+                  <div id="notification-panel" class="notification-panel absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <div class="px-4 py-3 border-b border-gray-100">
+                          <h3 class="font-bold text-gray-800">Notifications</h3>
+                      </div>
+                      <div class="px-4 py-3 border-t border-gray-100 text-center">
+                          <a href="#" class="text-sm text-blue-600 hover:underline font-semibold">View all notifications</a>
+                      </div>
+                  </div>
                 </div>
-
-                
                 <!-- Account dropdown -->
                 <div class="relative">
                   <button id="account-btn" class="rounded-full hover:bg-gray-200 px-[7px] py-[4px] transition-colors cursor-pointer">
                       <i class="fa-solid fa-user"></i>
                   </button>
+                  <!-- Account Panel -->
                   <div id="account-panel" class="notification-panel absolute right-0 top-full mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                      <!-- Profile header -->
                       <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
-                          <div class="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">T</div>
+                          <div class="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                              <i class="fa-solid fa-user"></i>
+                          </div>
                           <div>
-                              <p class="font-bold text-gray-800 text-sm">Thean</p>
-                              <p class="text-xs text-gray-500">thean@camcourses.com</p>
+                              <p class="font-bold text-gray-800 text-sm">User</p>
+                              <p class="text-xs text-gray-500">user@gmail.com</p>
                           </div>
                       </div>
+                      <!-- Menu items -->
                       <div class="py-2">
-                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-book-open text-blue-500 w-5 text-center"></i> My Courses
-                              <span class="ml-auto bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full font-semibold">3</span>
+                          <a href="/pages/signup.html" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class="fa-solid fa-arrow-right-to-bracket text-center"></i>
+                              Log in
                           </a>
-                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-certificate text-amber-500 w-5 text-center"></i> Certificates
-                          </a>
-                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-bookmark text-purple-500 w-5 text-center"></i> Saved Courses
-                          </a>
-                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-chart-line text-green-500 w-5 text-center"></i> Progress
+                          <a href="/pages/signup.html" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
+                              <i class= "fa-solid fa-pen text-center"></i>
+                              Regester
                           </a>
                           <div class="border-t border-gray-100 my-1"></div>
                           <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-gear text-gray-500 w-5 text-center"></i> Settings
+                              <i class="fa-solid fa-gear text-gray-500 w-5 text-center"></i>
+                              Settings
                           </a>
                           <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-blue-50 transition-colors text-sm text-gray-700">
-                              <i class="fa-solid fa-circle-question text-gray-500 w-5 text-center"></i> Help Center
+                              <i class="fa-solid fa-circle-question text-gray-500 w-5 text-center"></i>
+                              Help Center
                           </a>
                           <div class="border-t border-gray-100 my-1"></div>
-                          <a href="#" class="flex items-center gap-3 px-5 py-2.5 hover:bg-red-50 transition-colors text-sm text-red-600">
-                              <i class="fa-solid fa-right-from-bracket w-5 text-center"></i> Sign Out
-                          </a>
                       </div>
                   </div>
                 </div>
+                <!-- Hamburger button (mobile only) -->
                 <button id="hamburger-btn" class="lg:hidden rounded-full hover:bg-gray-200 px-2 py-1 cursor-pointer transition-colors">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
+
+        <!-- Mobile Menu (hidden by default) -->
         <div id="mobile-menu" class="mobile-menu lg:hidden">
             <div class="pt-4 pb-2 space-y-1">
+                <!-- Mobile Search -->
                 <div class="flex border border-gray-300 rounded-2xl px-4 py-2 mb-3 md:hidden focus-within:border-blue-500">
                     <input class="bg-transparent border-none outline-none w-full text-sm" type="text" placeholder="What do you want to learn?">
-                    <button><i class="fa-solid fa-search text-gray-500"></i></button>
+                    <button>
+                        <i class="fa-solid fa-search text-gray-500"></i>
+                    </button>
                 </div>
-                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">Explore</a>
-                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">My Courses</a>
-                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">Programs</a>
+                <!-- Mobile nav links -->
+                <div>
+                    <button id="mobile-explore-btn" class="w-full flex justify-between items-center text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors cursor-pointer">
+                        <span class="font-medium">Explore</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div id="mobile-explore-menu" class="hidden pl-4 space-y-1">
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-globe text-blue-500 w-4"></i> Web Development
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-database text-green-500 w-4"></i> Data Science
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-robot text-purple-500 w-4"></i> AI & Machine Learning
+                        </a>
+                        <a href="./pages/course.html" class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-blue-50 rounded-lg transition-colors text-sm">
+                            <i class="fa-solid fa-server text-orange-500 w-4"></i> DevOps & Cloud
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    My Courses
+                </a>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors font-medium">
+                    Programs
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a href="#" class="block text-gray-700 px-4 py-3 hover:bg-gray-200 rounded-xl transition-colors">
+                    <i class="fa-solid fa-globe mr-2"></i> Language
+                </a>
+                <!-- Mobile Theme Toggle -->
+                <div class="flex items-center justify-between px-4 py-3">
+                    <span class="text-gray-700 font-medium"><i class="fa-solid fa-circle-half-stroke mr-2"></i> Dark Mode</span>
+                    <button id="theme-toggle-mobile" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark mode">
+                        <span class="toggle-thumb">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
