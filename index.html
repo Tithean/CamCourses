@@ -1,13 +1,849 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CamCourse</title>
-    <link rel="stylesheet" href="./src/output.css">
-</head>
-<body>
-    
-    
-</body>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-campus-ink">
+    <!-- header -->
+    <header
+      id="site-header"
+      class="site-header fixed w-full z-30 top-0 bg-white/90 text-campus-navy border-b border-white/20"
+    >
+      <nav
+        class="max-w-[92%] xl:max-w-[75%] m-auto flex justify-between items-center gap-4 py-4"
+      >
+        <div class="flex flex-wrap gap-4 justify-center items-center">
+          <a href="#">
+            <span
+              class="text-2xl bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-transparent font-bold dark:text-white"
+            >
+              <span class="text-2xl">&lt;&gt;</span>CamCourse</span
+            >
+          </a>
+          <div id="explore-wrap" class="relative">
+            <button
+              id="explore-button"
+              class="flex justify-center items-center px-2 py-2 hover:bg-campus-sky hover:rounded-xl dark:hover:bg-campus-navy"
+              type="button"
+              aria-expanded="false"
+              aria-controls="explore-menu"
+            >
+              Explore
+              <i class="fa-solid fa-angle-down ml-1 transition-transform"></i>
+            </button>
+            <div
+              id="explore-menu"
+              class="nav-panel hidden absolute left-0 top-12 w-72 rounded-lg border border-slate-200 bg-white p-3 shadow-lg"
+            >
+              <a class="dropdown-link" href="#popular-courses">
+                <span>
+                  <strong>Popular Courses</strong>
+                  <small>Trending learning paths</small>
+                </span>
+              </a>
+              <a class="dropdown-link" href="#purchase-plan">
+                <span>
+                  <strong>Purchase Plans</strong>
+                  <small>Compare CamCourse packages</small>
+                </span>
+              </a>
+              <a class="dropdown-link" href="#feedback">
+                <span>
+                  <strong>Student Feedback</strong>
+                  <small>Read learner comments</small>
+                </span>
+              </a>
+            </div>
+          </div>
+          <a class="hover:underline" href="#popular-courses">Courses</a>
+          <div
+            class="flex border border-gray-300 rounded-4xl px-4 hover:border-campus-ink mt-1 lg:w-72 xl:w-[360px] transition-all focus-within:border-blue-500 focus-within:shadow-sm"
+          >
+            <input
+              id="search-input"
+              class="bg-transparent border-none outline-none w-full py-1"
+              type="text"
+              placeholder="What do you want to learn?"
+            />
+            <button
+              id="search-button"
+              type="button"
+              aria-label="Search courses"
+            >
+              <i class="fa-solid fa-search text-shadow-campus-sky"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-4 justify-center items-center">
+          <button
+            id="theme-toggle"
+            class="nav-icon hover:cursor-pointer hover:text-campus-blue"
+            title="switch theme"
+            type="button"
+            aria-label="Switch dark and light mode"
+          >
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <div class="relative">
+            <button
+              id="notification-button"
+              class="nav-icon relative hover:cursor-pointer hover:text-campus-blue"
+              title="notification"
+              type="button"
+              aria-expanded="false"
+              aria-controls="notification-menu"
+            >
+              <i class="fa-solid fa-bell"></i>
+              <span
+                id="notification-badge"
+                class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-lg bg-campus-cyan text-xs font-bold text-white"
+                >3</span
+              >
+            </button>
+            <div
+              id="notification-menu"
+              class="nav-panel hidden absolute right-0 top-12 w-80 rounded-lg border border-slate-200 bg-white p-4 shadow-lg"
+            >
+              <div class="flex items-center justify-between">
+                <p class="font-bold text-campus-navy">Notifications</p>
+                <button
+                  id="mark-read-button"
+                  class="text-sm font-semibold text-campus-blue"
+                  type="button"
+                >
+                  Mark read
+                </button>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="notification-item">
+                  <i class="fa-solid fa-certificate text-campus-cyan"></i>
+                  <p>Your Fullstack certificate is ready to view.</p>
+                </div>
+                <div class="notification-item">
+                  <i class="fa-solid fa-calendar-check text-campus-cyan"></i>
+                  <p>Data Science live Q&amp;A starts tomorrow.</p>
+                </div>
+                <div class="notification-item">
+                  <i class="fa-solid fa-bolt text-campus-cyan"></i>
+                  <p>AI Engineer course added 4 new lessons.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              id="user-button"
+              class="nav-icon hover:cursor-pointer hover:text-campus-blue"
+              title="user"
+              type="button"
+              aria-expanded="false"
+              aria-controls="user-menu"
+            >
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div
+              id="user-menu"
+              class="nav-panel hidden absolute right-0 top-12 w-72 rounded-lg border border-slate-200 bg-white p-4 shadow-lg"
+            >
+              <div
+                class="flex items-center gap-3 border-b border-slate-200 pb-4"
+              >
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-lg bg-campus-blue font-bold text-white"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-campus-navy">User</p>
+                  <p class="text-sm text-slate-600">User</p>
+                </div>
+              </div>
+              <div class="mt-3 grid gap-2">
+                <button class="user-action" type="button" data-action="profile">
+                  <i class="fa-solid fa-user"></i> Profile
+                </button>
+                <button class="user-action" type="button" data-action="login">
+                  <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+                <button class="user-action" type="button" data-action="signup">
+                  <i class="fa-solid fa-user-plus"></i> Sign up
+                </button>
+                <button class="user-action" type="button" data-action="signout">
+                  <i class="fa-solid fa-right-from-bracket"></i> Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- hero -->
+    <main class="w-full border-b border-b-slate-200">
+      <section
+        class="relative isolate flex min-h-[82vh] max-w-full overflow-hidden mt-18 justify-center items-center border-b border-b-slate-200"
+      >
+        <img
+          src="./assets/campus-hero.png"
+          alt="University students studying together on a modern campus"
+          class="absolute inset-0 -z-20 h-full w-full object-cover"
+        />
+        <div
+          class="absolute inset-0 -z-10 bg-gradient-to-r from-campus-navy/95 via-campus-blue/75 to-white/15"
+        ></div>
+        <div
+          class="section-shell grid gap-10 pb-12 pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
+        >
+          <div class="max-w-2xl text-white">
+            <p class="eyebrow text-cyan-200">
+              Built for Cambodian university students
+            </p>
+            <h1
+              class="mt-5 text-5xl font-black leading-tight sm:text-6xl lg:text-7xl"
+            >
+              CamCourse
+            </h1>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-blue-50">
+              Discover practical online courses, certificates, and learning
+              plans from respected universities across Cambodia.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="pages/courses.html"
+                class="btn-primary bg-white rounded-2xl px-4 py-2 text-campus-blue hover:bg-blue-50"
+                >Browse Courses</a
+              >
+              <a
+                href="pages/pricing.html"
+                class="border-white/40 bg-white/10 text-white rounded-2xl px-4 py-2 hover:bg-white hover:text-campus-blue"
+                >View plans</a
+              >
+            </div>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-3 lg:pb-4">
+            <div
+              class="rounded-lg border border-white/25 bg-white/15 p-4 text-white backdrop-blur-md"
+            >
+              <p class="text-3xl font-black">80+</p>
+              <p class="mt-1 text-sm text-blue-50">career-ready courses</p>
+            </div>
+            <div
+              class="rounded-lg border border-white/25 bg-white/15 p-4 text-white backdrop-blur-md"
+            >
+              <p class="text-3xl font-black">12</p>
+              <p class="mt-1 text-sm text-blue-50">university partners</p>
+            </div>
+            <div
+              class="rounded-lg border border-white/25 bg-white/15 p-4 text-white backdrop-blur-md"
+            >
+              <p class="text-3xl font-black">4.8</p>
+              <p class="mt-1 text-sm text-blue-50">average rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="max-w-[92%] lg:max-w-[75%] m-auto">
+        <!-- university -->
+        <section class="border-b border-b-slate-200 bg-white px-4 py-8">
+          <div class="university m-auto">
+            <p class="text-2xl text-start font-semibold text-campus-navy">
+              Learn with top university:
+            </p>
+            <div
+              class="flex flex-wrap gap-8 sm:gap-12 lg:gap-16 justify-center items-center mt-8"
+            >
+              <div class="flex flex-col gap-2 items-center text-center">
+                <a href="#">
+                  <img
+                    width="160px"
+                    height="auto"
+                    src="./assets/RUPP.png"
+                    alt="RUPP"
+                  />
+                </a>
+              </div>
+              <div class="flex flex-col gap-2 items-center text-center">
+                <a href="#">
+                  <img
+                    width="160px"
+                    height="auto"
+                    src="./assets/istad.png"
+                    alt="ISTAD"
+                  />
+                </a>
+              </div>
+              <div
+                class="flex flex-col gap-2 items-center text-center mt-[25px]"
+              >
+                <a href="#">
+                  <img
+                    width="160px"
+                    height="auto"
+                    class="cadt-logo"
+                    src="./assets/cadt.png"
+                    alt="CADT"
+                  />
+                </a>
+              </div>
+              <div class="flex flex-col gap-2 items-center text-center">
+                <a href="#">
+                  <img
+                    width="160px"
+                    height="auto"
+                    src="./assets/aupp.png"
+                    alt="AUPP"
+                  />
+                </a>
+              </div>
+              <div class="flex flex-col gap-2 items-center text-center -mt-1">
+                <a href="#">
+                  <img
+                    width="160px"
+                    height="auto"
+                    src="./assets/techno.png"
+                    alt="Techno"
+                  />
+                </a>
+              </div>
+              <div class="flex flex-col gap-2 items-center text-center -mt-1">
+                <a href="#">
+                  <img
+                    width="95px"
+                    height="auto"
+                    src="./assets/npic.png"
+                    alt="npic"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- invest skill -->
+        <section class="border-b border-b-slate-200 bg-white px-4 py-12">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p class="text-sm font-bold uppercase text-campus-cyan">
+                Invest Your Skill
+              </p>
+              <h2 class="mt-3 text-3xl font-black text-campus-navy">
+                Build practical ability for your next career step.
+              </h2>
+              <p class="mt-4 leading-7 text-slate-600">
+                CamCourse helps students turn classroom knowledge into projects,
+                certificates, and job-ready confidence through guided online
+                learning.
+              </p>
+              <a
+                href="#popular-courses"
+                class="mt-6 inline-flex items-center gap-2 rounded-lg bg-campus-blue px-5 py-3 font-semibold text-white hover:bg-campus-navy"
+              >
+                Start Learning
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div
+                class="rounded-lg border border-slate-200 bg-campus-sky p-5 dark:bg-campus-navy"
+              >
+                <i
+                  class="fa-solid fa-laptop-code text-2xl text-campus-blue"
+                ></i>
+                <p class="mt-4 text-xl font-bold text-campus-navy">
+                  Project labs
+                </p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Practice with real portfolio tasks.
+                </p>
+              </div>
+              <div
+                class="rounded-lg border border-slate-200 bg-emerald-50 p-5 dark:bg-campus-navy"
+              >
+                <i
+                  class="fa-solid fa-certificate text-2xl text-emerald-700"
+                ></i>
+                <p class="mt-4 text-xl font-bold text-campus-navy">
+                  Certificates
+                </p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Show proof of completed learning.
+                </p>
+              </div>
+              <div
+                class="rounded-lg border border-slate-200 bg-amber-50 p-5 dark:bg-campus-navy"
+              >
+                <i class="fa-solid fa-users text-2xl text-amber-700"></i>
+                <p class="mt-4 text-xl font-bold text-campus-navy">
+                  Mentor help
+                </p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Get direction when courses feel hard.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- popular courses -->
+        <section
+          id="popular-courses"
+          class="border-b border-b-slate-200 bg-white px-4 py-12"
+        >
+          <div
+            class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+          >
+            <div>
+              <h2 class="mt-3 text-3xl font-black text-campus-navy">
+                Learn skills companies are hiring for.
+              </h2>
+            </div>
+            <a
+              href="pages/courses.html"
+              class="inline-flex items-center gap-2 font-semibold text-campus-blue hover:text-campus-navy"
+            >
+              View all courses
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <!-- full stack -->
+            <article
+              class="course-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              data-course-card
+              data-course="fullstack web development html css javascript backend api deployment"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="./assets/fullstack.jpg"
+                alt="fullstack"
+              />
+              <h3 class="mt-5 text-xl font-bold text-campus-navy">
+                Fullstack Web Development
+              </h3>
+              <p class="mt-3 leading-7 text-slate-600">
+                Master HTML, CSS, JavaScript, backend APIs, and deployment with
+                project-based lessons.
+              </p>
+              <div
+                class="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-campus-ink"
+              >
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">12 weeks</span>
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy"
+                  >42 lessons</span
+                >
+              </div>
+            </article>
+            <!-- data science -->
+            <article
+              class="course-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              data-course-card
+              data-course="data science python statistics data cleaning visualization machine learning"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="./assets/datascience.webp"
+                alt="datascience"
+              />
+              <h3 class="mt-5 text-xl font-bold text-campus-navy">
+                Data Science
+              </h3>
+              <p class="mt-3 leading-7 text-slate-600">
+                Learn Python, statistics, data cleaning, visualization, and
+                machine learning foundations.
+              </p>
+              <div
+                class="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-campus-ink"
+              >
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">10 weeks</span>
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy"
+                  >36 lessons</span
+                >
+              </div>
+            </article>
+            <!-- ai engineer -->
+            <article
+              class="course-card rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              data-course-card
+              data-course="ai engineer artificial intelligence model api prompt evaluation deployment"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="./assets/aiEngineer.webp"
+                alt="ai engineer"
+              />
+              <h3 class="mt-5 text-xl font-bold text-campus-navy">
+                AI Engineer
+              </h3>
+              <p class="mt-3 leading-7 text-slate-600">
+                Build AI apps with model APIs, prompt design, evaluation, and
+                responsible deployment workflows.
+              </p>
+              <div
+                class="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-campus-ink"
+              >
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">8 weeks</span>
+                <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy"
+                  >30 lessons</span
+                >
+              </div>
+            </article>
+          </div>
+          <div
+            id="course-empty-state"
+            class="hidden mt-6 rounded-lg border border-slate-200 bg-campus-sky p-5 text-center font-semibold text-campus-navy"
+          >
+            No matching course found. Try Fullstack, Data Science, or AI.
+          </div>
+        </section>
+
+        <!-- comments -->
+        <section
+          id="feedback"
+          class="border-b border-b-slate-200 bg-white px-4 py-12"
+        >
+          <h2 class="mt-3 text-3xl font-black text-campus-navy">
+            What subscriber are achiving from learning?
+          </h2>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <article
+              class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-lg bg-campus-blue font-bold text-white"
+                >
+                  T
+                </div>
+                <div>
+                  <p class="font-bold text-campus-navy">Heng Tithean</p>
+                </div>
+              </div>
+              <p class="mt-5 leading-7 text-campus-ink">
+                "The web development course helped me finish my first real
+                portfolio project and understand how frontend connects to APIs."
+              </p>
+            </article>
+            <article
+              class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-700 font-bold text-white"
+                >
+                  DR
+                </div>
+                <div>
+                  <p class="font-bold text-campus-navy">Phai Virakthun</p>
+                </div>
+              </div>
+              <p class="mt-5 leading-7 text-campus-ink">
+                "The lessons are short, clear, and easy to follow after class. I
+                liked the quizzes and mentor notes."
+              </p>
+            </article>
+            <article
+              class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-700 font-bold text-white"
+                >
+                  ML
+                </div>
+                <div>
+                  <p class="font-bold text-campus-navy">Son Vichet</p>
+                </div>
+              </div>
+              <p class="mt-5 leading-7 text-campus-ink">
+                "CamCourse made data science less scary. The exercises gave me
+                enough practice to explain my work with confidence."
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- purchase plan -->
+        <section id="purchase-plan" class="bg-white px-4 py-12">
+          <h2 class="mt-3 text-3xl text-center font-black text-campus-navy">
+            Plan for you
+          </h2>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <article
+              class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <p class="text-lg font-bold text-campus-navy">CamCourse Go</p>
+              <p class="mt-4 text-4xl font-black text-campus-navy">$9</p>
+              <p class="mt-1 text-sm text-slate-600">per month</p>
+              <ul class="mt-6 space-y-3 text-campus-ink">
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Access to
+                  10 courses
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Weekly
+                  quizzes
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Course
+                  progress tracking
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="purchase-btn mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-campus-blue px-4 py-3 font-semibold text-campus-blue hover:bg-campus-sky"
+                data-plan="CamCourse Go"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                Purchase
+              </a>
+            </article>
+            <article
+              class="rounded-lg border-2 border-campus-blue bg-campus-sky p-6 shadow-sm dark:bg-campus-navy"
+            >
+              <p class="text-lg font-bold text-campus-navy">CamCourse Plus</p>
+              <p class="mt-4 text-4xl font-black text-campus-navy">$29</p>
+              <p class="mt-1 text-sm text-slate-600">per month</p>
+              <ul class="mt-6 space-y-3 text-campus-ink">
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Access to
+                  all courses
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i>
+                  Certificates included
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Mentor
+                  Q&amp;A support
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="purchase-btn mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-campus-blue px-4 py-3 font-semibold text-white hover:bg-campus-navy"
+                data-plan="CamCourse Plus"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                Purchase
+              </a>
+            </article>
+            <article
+              class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <p class="text-lg font-bold text-campus-navy">CamCourse Team</p>
+              <p class="mt-4 text-4xl font-black text-campus-navy">$139</p>
+              <p class="mt-1 text-sm text-slate-600">per year</p>
+              <ul class="mt-6 space-y-3 text-campus-ink">
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> 5 student
+                  seats
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Group
+                  learning dashboard
+                </li>
+                <li>
+                  <i class="fa-solid fa-check text-campus-cyan"></i> Priority
+                  course requests
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="purchase-btn mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-campus-blue px-4 py-3 font-semibold text-campus-blue hover:bg-campus-sky"
+                data-plan="CamCourse Team"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                Purchase
+              </a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-white text-campus-navy py-8 scroll-reveal">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto"
+      >
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <a href="#" class="text-2xl font-bold"> &lt;/&gt;CamCourses </a>
+          </div>
+          <div>
+            <ul class="leading-8">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <h3 class="text-2xl font-bold">Contact Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-solid fa-envelope"></i> Email:
+                  camcourses@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-ink transition-colors"
+                  ><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh,
+                  Cambodia</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <h3 class="text-2xl font-bold">Follow Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-instagram"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-telegram"></i> Telegram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-twitter"></i> Twitter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="max-w-[75%] m-auto border-campus-navy mt-8" />
+      <div class="max-w-[75%] m-auto flex justify-center mt-4">
+        <p class="text-campus-navy text-sm sm:text-base">
+          © 2026 CamCourses. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      <div
+        id="contact-panel"
+        class="contact-card hidden w-80 rounded-lg border border-slate-200 bg-white p-5 shadow-lg"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-lg font-bold text-campus-navy">Contact CamCourse</p>
+            <p class="mt-1 text-sm text-slate-600">
+              Ask about courses, plans, or certificates.
+            </p>
+          </div>
+          <button
+            id="contact-close"
+            class="nav-icon text-campus-ink hover:text-campus-blue"
+            type="button"
+            aria-label="Close contact panel"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mt-4 grid gap-3">
+          <a class="contact-link" href="mailto:camcourses@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            camcourses@gmail.com
+          </a>
+          <a class="contact-link" href="tel:+85512345678">
+            <i class="fa-solid fa-phone"></i>
+            +855 12 345 678
+          </a>
+          <a class="contact-link" href="#">
+            <i class="fa-brands fa-telegram"></i>
+            Telegram support
+          </a>
+        </div>
+      </div>
+      <button
+        id="contact-toggle"
+        class="inline-flex items-center gap-2 rounded-lg bg-campus-blue px-5 py-3 font-semibold text-white shadow-lg hover:bg-campus-navy"
+        type="button"
+        aria-expanded="false"
+        aria-controls="contact-panel"
+      >
+        <i class="fa-solid fa-message"></i>
+        Contact
+      </button>
+    </div>
+
+    <div
+      id="toast"
+      class="toast pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-campus-navy px-5 py-3 font-semibold text-white opacity-0 shadow-lg"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <script src="./js/main.js"></script>
+  </body>
 </html>
