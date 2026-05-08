@@ -8,79 +8,196 @@
       content="Browse Cambodian university courses by subject, level, and institution on CamCourse."
     />
     <title>Courses | CamCourse</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../src/output.css" />
   </head>
   <body>
-    <div class="max-w-[75%] m-auto">
-        <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-      <nav class="section-shell flex h-16 items-center justify-between">
-        <a href="../index.html" class="flex items-center gap-3" data-nav="home">
-          <span class="flex size-10 items-center justify-center rounded-lg bg-campus-blue text-lg font-black text-white">C</span>
-          <span>
-            <span class="block text-base font-black text-campus-ink">CamCourse</span>
-            <span class="block text-xs font-semibold text-slate-500">Cambodia learns here</span>
-          </span>
-        </a>
-        <div class="hidden items-center gap-8 md:flex">
-          <a href="../index.html" class="nav-link" data-nav="home">Home</a>
-          <a href="courses.html" class="nav-link" data-nav="courses">Courses</a>
-          <a href="pricing.html" class="nav-link" data-nav="pricing">Plans</a>
-          <a href="auth.html" class="nav-link" data-nav="auth">Login</a>
+
+     <header
+      id="site-header"
+      class="site-header fixed w-full z-30 top-0 bg-white/90 text-campus-navy border-b border-white/20"
+    >
+      <nav
+        class="max-w-[92%] xl:max-w-[75%] m-auto flex justify-between items-center gap-4 py-4"
+      >
+        <div class="flex flex-wrap gap-4 justify-center items-center">
+          <a href="#">
+            <span
+              class="text-2xl bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-transparent font-bold dark:text-white"
+            >
+              <span class="text-2xl">&lt;&gt;</span>CamCourse</span
+            >
+          </a>
+          <div id="explore-wrap" class="relative">
+            <button
+              id="explore-button"
+              class="flex justify-center items-center px-2 py-2 hover:bg-campus-sky hover:rounded-xl dark:hover:bg-campus-navy"
+              type="button"
+              aria-expanded="false"
+              aria-controls="explore-menu"
+            >
+              Explore
+              <i class="fa-solid fa-angle-down ml-1 transition-transform"></i>
+            </button>
+            <div
+              id="explore-menu"
+              class="nav-panel hidden absolute left-0 top-12 w-72 rounded-lg border border-slate-200 bg-white p-3 shadow-lg"
+            >
+              <a class="dropdown-link" href="#popular-courses">
+                <span>
+                  <strong>Popular Courses</strong>
+                  <small>Trending learning paths</small>
+                </span>
+              </a>
+              <a class="dropdown-link" href="#purchase-plan">
+                <span>
+                  <strong>Purchase Plans</strong>
+                  <small>Compare CamCourse packages</small>
+                </span>
+              </a>
+              <a class="dropdown-link" href="#feedback">
+                <span>
+                  <strong>Student Feedback</strong>
+                  <small>Read learner comments</small>
+                </span>
+              </a>
+            </div>
+          </div>
+          <a class="hover:underline" href="#popular-courses">Courses</a> 
         </div>
-        <a href="auth.html" class="btn-primary hidden !min-h-10 !px-4 !py-2 md:inline-flex">Join now</a>
-        <button class="rounded-lg border border-slate-200 p-2 md:hidden" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-button>
-          <span class="block h-0.5 w-6 bg-campus-ink"></span>
-          <span class="mt-1.5 block h-0.5 w-6 bg-campus-ink"></span>
-          <span class="mt-1.5 block h-0.5 w-6 bg-campus-ink"></span>
-        </button>
+        <div class="flex gap-4 justify-center items-center">
+          <button
+            id="theme-toggle"
+            class="nav-icon hover:cursor-pointer hover:text-campus-blue"
+            title="switch theme"
+            type="button"
+            aria-label="Switch dark and light mode"
+          >
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <div class="relative">
+            <button
+              id="notification-button"
+              class="nav-icon relative hover:cursor-pointer hover:text-campus-blue"
+              title="notification"
+              type="button"
+              aria-expanded="false"
+              aria-controls="notification-menu"
+            >
+              <i class="fa-solid fa-bell"></i>
+              <span
+                id="notification-badge"
+                class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-lg bg-campus-cyan text-xs font-bold text-white"
+                >3</span
+              >
+            </button>
+            <div
+              id="notification-menu"
+              class="nav-panel hidden absolute right-0 top-12 w-80 rounded-lg border border-slate-200 bg-white p-4 shadow-lg"
+            >
+              <div class="flex items-center justify-between">
+                <p class="font-bold text-campus-navy">Notifications</p>
+                <button
+                  id="mark-read-button"
+                  class="text-sm font-semibold text-campus-blue"
+                  type="button"
+                >
+                  Mark read
+                </button>
+              </div>
+              <div class="mt-4 space-y-3">
+                <div class="notification-item">
+                  <i class="fa-solid fa-certificate text-campus-cyan"></i>
+                  <p>Your Fullstack certificate is ready to view.</p>
+                </div>
+                <div class="notification-item">
+                  <i class="fa-solid fa-calendar-check text-campus-cyan"></i>
+                  <p>Data Science live Q&amp;A starts tomorrow.</p>
+                </div>
+                <div class="notification-item">
+                  <i class="fa-solid fa-bolt text-campus-cyan"></i>
+                  <p>AI Engineer course added 4 new lessons.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              id="user-button"
+              class="nav-icon hover:cursor-pointer hover:text-campus-blue"
+              title="user"
+              type="button"
+              aria-expanded="false"
+              aria-controls="user-menu"
+            >
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div
+              id="user-menu"
+              class="nav-panel hidden absolute right-0 top-12 w-72 rounded-lg border border-slate-200 bg-white p-4 shadow-lg"
+            >
+              <div
+                class="flex items-center gap-3 border-b border-slate-200 pb-4"
+              >
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-lg bg-campus-blue font-bold text-white"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-campus-navy">User</p>
+                  <p class="text-sm text-slate-600">User</p>
+                </div>
+              </div>
+              <div class="mt-3 grid gap-2">
+                <button class="user-action" type="button" data-action="profile">
+                  <i class="fa-solid fa-user"></i> Profile
+                </button>
+                <button class="user-action" type="button" data-action="login">
+                  <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+                <a href="./pages/signup.html" class="user-action" type="button" data-action="signup">
+                  <i class="fa-solid fa-user-plus"></i> Sign up
+                </a>
+                <button class="user-action" type="button" data-action="signout">
+                  <i class="fa-solid fa-right-from-bracket"></i> Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
-      <div class="hidden border-t border-slate-100 bg-white md:hidden" data-mobile-menu>
-        <div class="section-shell flex flex-col gap-3 py-4">
-          <a href="../index.html" class="nav-link" data-nav="home">Home</a>
-          <a href="courses.html" class="nav-link" data-nav="courses">Courses</a>
-          <a href="pricing.html" class="nav-link" data-nav="pricing">Plans</a>
-          <a href="auth.html" class="nav-link" data-nav="auth">Login / Register</a>
-        </div>
-      </div>
     </header>
 
-    <main>
-      <section class="border-b border-slate-200 bg-white py-16">
-        <div class="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p class="eyebrow">Course catalog</p>
-            <h1 class="mt-3 text-4xl font-black leading-tight text-campus-ink sm:text-5xl">Choose your next university-backed skill.</h1>
-          </div>
-          <p class="text-base leading-8 text-slate-600">
-            Filter practical courses from Cambodian universities by subject, school, and career direction. Shortlist a course, then pick the plan that fits your semester.
-          </p>
+    <main class="max-w-[75%] m-auto">
+      <div class="relative isolate flex max-w-full overflow-hidden mt-18  justify-center items-center border-b border-b-slate-200 ">
+      </div>
+      <section class="soft-panel p-4">
+        <div class="grid gap-3 lg:grid-cols-[1fr_280px]">
+          <label class="block">
+            <span class="sr-only">Search courses</span>
+            <input
+              class="min-h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-campus-blue"
+              type="search"
+              placeholder="Search by course, university, or skill"
+              data-course-search
+            />
+          </label>
+          <label class="block">
+            <span class="sr-only">University</span>
+            <select
+              class="min-h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-600 outline-none transition focus:border-campus-blue"
+              data-course-university
+            ></select>
+          </label>
         </div>
-      </section>
-
-      <section class="py-8">
-        <div class="section-shell">
-          <div class="soft-panel p-4">
-            <div class="grid gap-3 lg:grid-cols-[1fr_280px]">
-              <label class="block">
-                <span class="sr-only">Search courses</span>
-                <input
-                  class="min-h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-campus-blue"
-                  type="search"
-                  placeholder="Search by course, university, or skill"
-                  data-course-search
-                />
-              </label>
-              <label class="block">
-                <span class="sr-only">University</span>
-                <select
-                  class="min-h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-600 outline-none transition focus:border-campus-blue"
-                  data-course-university
-                ></select>
-              </label>
-            </div>
-            <div class="mt-4 flex flex-wrap gap-2" data-category-chips></div>
-          </div>
-        </div>
+        <div class="mt-4 flex flex-wrap gap-2" data-category-chips></div>
       </section>
 
       <section class="pb-16">
@@ -236,16 +353,127 @@
       </section>
     </main>
 
-    <footer class="bg-white py-10">
-      <div class="section-shell flex flex-col justify-between gap-5 text-sm text-slate-500 md:flex-row md:items-center">
-        <p class="font-semibold text-campus-ink">CamCourse</p>
-        <p>Browse courses from leading Cambodian universities.</p>
+    <footer class="bg-white text-campus-navy py-8 scroll-reveal">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-32 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto"
+      >
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <a href="#" class="text-2xl font-bold"> &lt;/&gt;CamCourses </a>
+          </div>
+          <div>
+            <ul class="leading-8">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >Terms &amp; Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue hover:underline transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <h3 class="text-2xl font-bold">Contact Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-solid fa-envelope"></i> Email:
+                  camcourses@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-ink transition-colors"
+                  ><i class="fa-solid fa-phone"></i> Phone: +855 12 345 678</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-solid fa-location-dot"></i> Address: Phnom Penh,
+                  Cambodia</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div
+            class="flex items-center gap-2 border-b-2 border-campus-blue w-fit pb-4 mb-4"
+          >
+            <h3 class="text-2xl font-bold">Follow Us</h3>
+          </div>
+          <div>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-instagram"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-telegram"></i> Telegram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-campus-ink hover:text-campus-blue transition-colors"
+                  ><i class="fa-brands fa-twitter"></i> Twitter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="max-w-[75%] m-auto border-campus-navy mt-8" />
+      <div class="max-w-[75%] m-auto flex justify-center mt-4">
+        <p class="text-campus-navy text-sm sm:text-base">
+          © 2026 CamCourses. All rights reserved.
+        </p>
       </div>
     </footer>
 
     <div class="pointer-events-none fixed bottom-5 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 translate-y-8 rounded-lg bg-campus-ink px-5 py-4 text-sm font-semibold text-white opacity-0 shadow-xl transition" data-toast></div>
-    </div>
-    
-    <script src="../javascript/app.js"></script>
+   
+
   </body>
 </html>
