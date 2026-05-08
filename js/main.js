@@ -95,18 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
     togglePanel(userMenu, userButton);
   });
 
-  document.querySelectorAll(".user-action").forEach((button) => {
-    button.addEventListener("click", () => {
-      const messages = {
-        profile: "Opening your student profile.",
-        login: "Login form coming soon.",
-        signup: "Sign up flow coming soon.",
-        signout: "You have signed out of this demo session.",
-      };
-      showToast(messages[button.dataset.action] || "Action selected.");
-      hidePanel(userMenu, userButton);
-    });
-  });
 
   const getSavedTheme = () => {
     try {
