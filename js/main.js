@@ -137,9 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme(preferredTheme);
 
   themeToggle?.addEventListener("click", () => {
-    const nextTheme = root.classList.contains("dark") ? "light" : "dark";
-    applyTheme(nextTheme);
-    // showToast(`${nextTheme === "dark" ? "Dark" : "Light"} mode enabled.`);
+    const nextTheme = root.classList.contains("dark") ? "light" : "dark";      applyTheme(nextTheme);
   });
 
   const filterCourses = () => {
