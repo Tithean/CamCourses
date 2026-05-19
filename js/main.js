@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.documentElement;
+  const root = document.documentElement;            
   const body = document.body;
   const exploreWrap = document.querySelector("#explore-wrap");
   const exploreButton = document.querySelector("#explore-button");
@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.querySelector("#theme-icon");
   const searchInput = document.querySelector("#search-input");
   const searchButton = document.querySelector("#search-button");
-  const courseCards = document.querySelectorAll("[data-course-card]");
-  const courseEmptyState = document.querySelector("#course-empty-state");
   const contactToggle = document.querySelector("#contact-toggle");
   const contactPanel = document.querySelector("#contact-panel");
   const contactClose = document.querySelector("#contact-close");
@@ -112,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  //toggle theme
   const applyTheme = (theme) => {
     const darkMode = theme === "dark";
     root.classList.toggle("dark", darkMode);
