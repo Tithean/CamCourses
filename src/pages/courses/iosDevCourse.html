@@ -1,0 +1,217 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iOS Development | CamCourse</title>
+    <link rel="stylesheet" href="../../output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-campus-ink">
+    <header id="site-header" class="site-header fixed top-0 z-30 w-full border-b border-white/20 bg-white/90 text-campus-navy">
+      <nav class="mx-auto flex max-w-[94%] items-center justify-between gap-3 py-3 xl:max-w-[78%]">
+        <a href="../../../index.html">
+          <span class="bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-2xl font-bold text-transparent">&lt;/&gt;CamCourse</span>
+        </a>
+        <div class="hidden items-center gap-4 md:flex">
+          <a class="font-medium hover:underline" href="../course.html">Catalog</a>
+          <a class="font-medium hover:underline" href="../degree.html">Degrees</a>
+          <a class="font-medium hover:underline" href="../about.html">About</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue" type="button" aria-label="Switch dark and light mode">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <a class="rounded-lg border border-campus-blue px-3 py-2 text-sm font-semibold text-campus-blue hover:bg-campus-sky" href="../signup.html">Enroll</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-20">
+      <section class="border-b border-b-slate-200 bg-white px-4 py-12">
+        <div class="mx-auto grid w-[94%] gap-8 lg:w-[78%] lg:grid-cols-[1.05fr_0.95fr] lg:items-center" data-reveal>
+          <div>
+            <p class="text-sm font-bold uppercase text-campus-cyan">Native app path</p>
+            <h1 class="mt-3 text-4xl font-black text-campus-navy sm:text-5xl">iOS Development</h1>
+            <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">Build native iOS applications using Swift, SwiftUI, and Xcode with strong performance and UX patterns.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-campus-ink">
+              <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">8 weeks</span>
+              <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">Intermediate</span>
+              <span class="rounded-lg bg-slate-100 px-3 py-1 dark:text-campus-navy">Capstone included</span>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="../signup.html" class="inline-flex items-center gap-2 rounded-lg bg-campus-blue px-5 py-3 font-semibold text-white hover:bg-campus-navy">
+                Enroll now
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="../course.html" class="inline-flex items-center gap-2 rounded-lg border border-campus-blue px-5 py-3 font-semibold text-campus-blue hover:bg-campus-sky">
+                Back to catalog
+              </a>
+            </div>
+          </div>
+          <div class="h-72 w-full rounded-lg flex items-center justify-center">
+            <img class="h-fit w-fit rounded-lg object-cover" src="../../../assets/iosdev.png" alt="iOS Development" />
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-b-slate-200 bg-white px-4 py-12">
+        <div class="mx-auto grid w-[94%] gap-5 md:grid-cols-3 lg:w-[78%]">
+          <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <i class="fa-solid fa-list-check text-2xl text-campus-cyan"></i>
+            <h2 class="mt-4 text-lg font-bold text-campus-navy">What you will learn</h2>
+            <p class="mt-2 leading-7 text-slate-600">Native iOS design patterns, Swift language essentials, and app lifecycle.</p>
+          </article>
+          <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <i class="fa-solid fa-laptop-code text-2xl text-campus-cyan"></i>
+            <h2 class="mt-4 text-lg font-bold text-campus-navy">Hands-on project</h2>
+            <p class="mt-2 leading-7 text-slate-600">Launch a complete iOS productivity app with API data and local persistence.</p>
+          </article>
+          <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <i class="fa-solid fa-briefcase text-2xl text-campus-cyan"></i>
+            <h2 class="mt-4 text-lg font-bold text-campus-navy">Career outcome</h2>
+            <p class="mt-2 leading-7 text-slate-600">Prepare for junior iOS developer opportunities.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-white px-4 py-12">
+        <div class="mx-auto w-[94%] rounded-lg border border-slate-200 bg-campus-sky p-6 lg:w-[78%]" data-reveal>
+          <h2 class="text-3xl font-black text-campus-navy">Syllabus overview</h2>
+          <ul class="mt-5 grid gap-3 text-campus-ink md:grid-cols-2">
+            <li class="rounded-lg border border-slate-200 bg-white p-4"><i class="fa-solid fa-check text-campus-cyan"></i> Swift language and iOS fundamentals</li>
+            <li class="rounded-lg border border-slate-200 bg-white p-4"><i class="fa-solid fa-check text-campus-cyan"></i> SwiftUI components and navigation</li>
+            <li class="rounded-lg border border-slate-200 bg-white p-4"><i class="fa-solid fa-check text-campus-cyan"></i> Network integration and local storage</li>
+            <li class="rounded-lg border border-slate-200 bg-white p-4"><i class="fa-solid fa-check text-campus-cyan"></i> Testing, optimization, and App Store readiness</li>
+          </ul>
+        </div>
+      </section>
+    
+      <section class="border-b border-b-slate-200 bg-white px-4 py-12">
+        <div class="mx-auto w-[94%] lg:w-[78%]">
+          <div class="grid gap-12 lg:grid-cols-3">
+            <div class="lg:col-span-2">
+              <h2 class="text-2xl font-black text-campus-navy" data-reveal>Curriculum</h2>
+              <div class="mt-6 grid gap-4">
+                <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+                  <button class="flex w-full items-center justify-between gap-4 text-left text-lg font-bold text-campus-navy" type="button" data-accordion-trigger="#week-1" aria-expanded="false">
+                    Week 1-2: Foundations
+                    <i class="fa-solid fa-angle-down transition-transform"></i>
+                  </button>
+                  <p id="week-1" class="mt-4 hidden leading-7 text-slate-600">Core concepts, setup, and fundamental principles.</p>
+                </article>
+                <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+                  <button class="flex w-full items-center justify-between gap-4 text-left text-lg font-bold text-campus-navy" type="button" data-accordion-trigger="#week-3" aria-expanded="false">
+                    Week 3-5: Advanced Topics
+                    <i class="fa-solid fa-angle-down transition-transform"></i>
+                  </button>
+                  <p id="week-3" class="mt-4 hidden leading-7 text-slate-600">Deep dive into complex patterns and practical application.</p>
+                </article>
+                <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+                  <button class="flex w-full items-center justify-between gap-4 text-left text-lg font-bold text-campus-navy" type="button" data-accordion-trigger="#week-6" aria-expanded="false">
+                    Week 6-8: Final Project
+                    <i class="fa-solid fa-angle-down transition-transform"></i>
+                  </button>
+                  <p id="week-6" class="mt-4 hidden leading-7 text-slate-600">Build and deploy a comprehensive capstone project.</p>
+                </article>
+              </div>
+            </div>
+            
+            <div class="space-y-10">
+              <div data-reveal>
+                <h2 class="text-xl font-bold text-campus-navy">Skills you'll gain</h2>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-semibold text-campus-ink">Architecture</span>
+                  <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-semibold text-campus-ink">Problem Solving</span>
+                  <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-semibold text-campus-ink">Best Practices</span>
+                  <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm font-semibold text-campus-ink">Deployment</span>
+                </div>
+              </div>
+              
+              <div data-reveal>
+                <h2 class="text-xl font-bold text-campus-navy">Instructor</h2>
+                <div class="mt-4 flex items-center gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-full bg-campus-blue text-white text-xl">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-campus-navy">CamCourse Faculty</p>
+                    <p class="text-sm text-slate-600">Senior Industry Expert</p>
+                  </div>
+                </div>
+              </div>
+
+              <div data-reveal>
+                <h2 class="text-xl font-bold text-campus-navy">Who this is for</h2>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Ideal for students and professionals looking to upskill and transition into modern tech roles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-campus-navy px-4 py-16 text-center text-white">
+        <div class="mx-auto w-[94%] lg:w-[60%]" data-reveal>
+          <h2 class="text-3xl font-black">Ready to advance your career?</h2>
+          <p class="mt-4 text-lg text-blue-100">Join thousands of learners building their future today.</p>
+          <a href="../signup.html" class="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 font-bold text-campus-blue hover:bg-campus-sky transition-colors">
+            Enroll Now
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white py-8 text-campus-navy">
+      <div
+        class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 sm:px-12 lg:grid-cols-4 lg:px-16"
+      >
+        <div>
+          <a href="./index.html" class="text-2xl font-bold">&lt;/&gt;CamCourses</a>
+          <p class="mt-4 leading-7 text-slate-600">
+            Practical technology education for learners in Cambodia and beyond.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Explore</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/course.html">Course catalog</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/degree.html">Degrees</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/about.html">About us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Support</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/policyAndPrivacy.html">Privacy policy</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/termOfService.html">Terms of service</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/login.html">Learner login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Contact</h3>
+          <ul class="mt-4 space-y-2">
+            <li><i class="fa-solid fa-envelope"></i> camcourses@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i> +855 12 345 678</li>
+            <li><i class="fa-solid fa-location-dot"></i> Phnom Penh, Cambodia</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="mx-auto mt-8 max-w-[75%] border-campus-navy" />
+      <div class="mx-auto mt-4 flex max-w-[75%] justify-center">
+        <p class="text-sm text-campus-navy sm:text-base">
+          © 2026 CamCourses. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-campus-navy px-5 py-3 font-semibold text-white opacity-0 shadow-lg"></div>
+    <script src="../../../js/main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamCourse | Course Catalog</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-campus-ink">
+    <header
+      id="site-header"
+      class="site-header fixed top-0 z-30 w-full border-b border-white/20 bg-white/90 text-campus-navy"
+    >
+      <nav
+        class="mx-auto flex max-w-[94%] items-center justify-between gap-3 py-3 xl:max-w-[78%]"
+      >
+        <div class="flex items-center gap-3">
+          <a href="../../index.html" class="shrink-0">
+            <span
+              class="bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-2xl font-bold text-transparent dark:text-white"
+            >
+              <span class="text-2xl">&lt;&gt;</span>CamCourse
+            </span>
+          </a>
+          <div id="explore-wrap" class="relative hidden lg:block">
+            <button
+              id="explore-button"
+              class="flex items-center rounded-lg px-3 py-2 font-semibold hover:bg-campus-sky"
+              type="button"
+              aria-expanded="false"
+              aria-controls="explore-menu"
+            >
+              Explore
+              <i
+                class="fa-solid fa-angle-down ml-2 text-sm transition-transform"
+              ></i>
+            </button>
+            <!-- explore categories -->
+            <div
+              id="explore-menu"
+              class="explore-mega hidden"
+            >
+              <div class="explore-mega-inner">
+                <div class="explore-col explore-col-left bg-campus-sky">
+                  <p class="explore-heading">Goals</p>
+                  <div class="grid gap-1">
+                    <a href="./src/pages/course.html" class="explore-goal-link">
+                      <i class="fa-solid fa-compass"></i>
+                      Take a free course
+                    </a>
+                    <a href="./src/pages/degree.html" class="explore-goal-link">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      Earn a Degree
+                    </a>
+                    <a href="./src/pages/plans.html" class="explore-goal-link">
+                      <i class="fa-solid fa-certificate"></i>
+                      Earn a Certificate
+                    </a>
+                    <a href="./src/pages/course.html" class="explore-goal-link">
+                      <i class="fa-solid fa-briefcase"></i>
+                      Find your new career
+                    </a>
+                  </div>
+                </div>
+                <div class="explore-col explore-col-center bg-campus-sky">
+                  <div>
+                    <p class="explore-heading">Subjects</p>
+                    <div class="grid gap-1">
+                      <a href="./src/pages/courses/dataAnalyticsCourse.html" class="explore-link">Data Science</a>
+                      <a href="./src/pages/course.html" class="explore-link">Business</a>
+                      <a href="./src/pages/courses/frontendCourse.html" class="explore-link">Computer Science</a>
+                      <a href="./src/pages/courses/cloudComputingCourse.html" class="explore-link">Information Technology</a>
+                      <a href="./src/pages/course.html" class="explore-link">Language Learning</a>
+                      <a href="./src/pages/course.html" class="explore-link">Health</a>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="explore-heading">&nbsp;</p>
+                    <div class="grid gap-1">
+                      <a href="./src/pages/course.html" class="explore-link">Math and Logic</a>
+                      <a href="./src/pages/course.html" class="explore-link">Personal Development</a>
+                      <a href="./src/pages/course.html" class="explore-link">Physical Science and Engineering</a>
+                      <a href="./src/pages/course.html" class="explore-link">Social Sciences</a>
+                      <a href="./src/pages/course.html" class="explore-link">Arts and Humanities</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="explore-col explore-col-right bg-campus-sky">
+                  <p class="explore-heading">Popular Certificates</p>
+                  <div class="grid gap-2">
+                    <a href="./src/pages/courses/aiEngineerCourse.html" class="explore-link">
+                      AI Engineer Professional Certificate
+                      <small>CamCourse • Professional Certificate</small>
+                    </a>
+                    <a href="./src/pages/courses/dataAnalyticsCourse.html" class="explore-link">
+                      Data Analytics Professional Certificate
+                      <small>CamCourse • Professional Certificate</small>
+                    </a>
+                    <a href="./src/pages/courses/cybersecurityCourse.html" class="explore-link">
+                      Cybersecurity Professional Certificate
+                      <small>CamCourse • Professional Certificate</small>
+                    </a>
+                    <a href="./src/pages/courses/frontendCourse.html" class="explore-link">
+                      Frontend Developer Professional Certificate
+                      <small>CamCourse • Professional Certificate</small>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <a
+            class="hidden font-medium hover:underline lg:inline"
+            href="./course.html"
+            >Courses</a
+          >
+          <a
+            class="hidden font-medium hover:underline lg:inline"
+            href="./degree.html"
+            >Degrees</a
+          >
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div
+            class="hidden rounded-4xl border border-gray-300 px-4 transition-all hover:border-campus-ink focus-within:border-blue-500 focus-within:shadow-sm lg:flex lg:w-72"
+          >
+            <input
+              id="search-input"
+              class="w-full border-none bg-transparent py-1 outline-none"
+              type="text"
+              placeholder="Search courses"
+            />
+            <button id="search-button" type="button" aria-label="Search">
+              <i class="fa-solid fa-search text-campus-blue"></i>
+            </button>
+          </div>
+          <button
+            id="theme-toggle"
+            class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue"
+            title="switch theme"
+            type="button"
+            aria-label="Switch dark and light mode"
+          >
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <a
+            class="hidden rounded-lg border border-campus-blue px-4 py-2 text-sm font-semibold text-campus-blue hover:bg-campus-sky sm:inline-flex"
+            href="./login.html"
+            >Login</a
+          >
+          <button
+            id="mobile-nav-toggle"
+            class="nav-icon rounded-lg border border-slate-200 lg:hidden"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav-panel"
+            aria-label="Open navigation menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav> 
+    </header>
+
+    <main class="pt-20 border-b border-gray-200">
+      
+      <section class="border-b border-b-slate-200 bg-white px-4 py-12">
+        <div class="mx-auto w-[94%] lg:w-[78%]" data-reveal>
+          <p class="text-sm font-bold uppercase text-campus-cyan">
+            Course catalog
+          </p>
+          <h1 class="mt-3 text-4xl font-black text-campus-navy sm:text-5xl">
+            Explore Technology and IT courses
+          </h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+            Build practical skills through role-based paths inspired by leading
+            online learning experiences.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <button
+              class="rounded-lg border border-campus-blue bg-campus-blue px-4 py-2 font-semibold text-campus-sky"
+              type="button"
+              data-topic-filter="all"
+            >
+              All
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="web"
+            >
+              Web
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="data"
+            >
+              Data
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="ai"
+            >
+              AI
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="cloud"
+            >
+              Cloud
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="security"
+            >
+              Security
+            </button>
+            <button
+              class="rounded-lg border border-campus-blue bg-white px-4 py-2 font-semibold text-campus-blue"
+              type="button"
+              data-topic-filter="mobile"
+            >
+              Mobile
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- courses -->
+      <section id="popular-courses" class="bg-white px-4 py-12">
+        <div class="mx-auto w-[94%] lg:w-[78%]">
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <a
+              href="./courses/frontendCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="web"
+              data-course="frontend html css javascript react tailwind ui"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/frontend.png"
+                alt="Frontend Development"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Frontend Development
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Modern UI engineering with Tailwind, React, and accessibility.
+              </p>
+            </a>
+            <a
+              href="./courses/backendCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="web"
+              data-course="backend node express api database auth deployment"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/backend.png"
+                alt="Backend Development"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Backend Development
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Build secure APIs, data models, and scalable backend services.
+              </p>
+            </a>
+            <a
+              href="./courses/mobileAppCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="mobile"
+              data-course="mobile app flutter react native ios android"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/mobileappdev.png"
+                alt="Mobile App Development"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Mobile App Development
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Ship cross-platform apps with strong UX and production
+                workflows.
+              </p>
+            </a>
+            <a
+              href="./courses/iosDevCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="mobile"
+              data-course="ios swift xcode mobile app"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/iosdev.png"
+                alt="iOS Development"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                iOS Development
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Build native iOS apps using Swift, SwiftUI, and Xcode tooling.
+              </p>
+            </a>
+            <a
+              href="./courses/pythonCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="data"
+              data-course="python programming scripts automation beginner"
+            >
+              <div
+                class="h-44 w-full rounded-lg flex items-center justify-center bg-amber-100"
+              >
+                <img
+                  class="h-fit w-32 rounded-lg object-cover"
+                  src="../../assets/python.webp"
+                  alt="Python Programming"
+                />
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Python Programming
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Master core Python syntax, automation, and data workflow basics.
+              </p>
+            </a>
+            <a
+              href="./courses/dataAnalyticsCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="data"
+              data-course="data analytics sql power bi dashboard statistics"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/data-analytic.png"
+                alt="Data Analytics"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Data Analytics
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Use SQL, spreadsheets, and BI dashboards to generate business
+                insights.
+              </p>
+            </a>
+            <a
+              href="./courses/aiEngineerCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="ai"
+              data-course="ai engineering prompt llm api vector database"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/aiEngineer.webp"
+                alt="AI Engineer"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                AI Engineer
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Design production AI systems with model APIs and evaluation
+                loops.
+              </p>
+            </a>
+            <a
+              href="./courses/cloudComputingCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="cloud"
+              data-course="cloud computing aws devops kubernetes serverless"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/cloud-computing-course.png"
+                alt="Cloud Computing"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Cloud Computing
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Deploy resilient apps using cloud services, containers, and
+                CI/CD.
+              </p>
+            </a>
+            <a
+              href="./courses/cybersecurityCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="security"
+              data-course="cybersecurity networking security incident response"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/cyber.png"
+                alt="Cybersecurity"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Cybersecurity
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Understand attack surfaces, threat response, and defensive
+                security.
+              </p>
+            </a>
+            <a
+              href="./courses/uiuxCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="web"
+              data-course="ui ux figma usability prototyping"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/uxui.png"
+                alt="UI UX Design"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                UI/UX Design
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Design interfaces with research-backed UX and polished visual
+                systems.
+              </p>
+            </a>
+            <a
+              href="./courses/devopsCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="cloud"
+              data-course="devops ci cd automation docker monitoring"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/devops.png"
+                alt="DevOps Engineering"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                DevOps Engineering
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Automate testing, deployments, and observability for modern
+                teams.
+              </p>
+            </a>
+            <a
+              href="./courses/networkingCourse.html"
+              class="course-card rounded-lg border border-slate-200 bg-campus-sky p-5 shadow-sm"
+              data-course-card
+              data-topic="security"
+              data-course="networking tcp ip routing firewall infrastructure"
+            >
+              <img
+                class="h-44 w-full rounded-lg object-cover"
+                src="../../assets/basic-fundamental-of-networking.png"
+                alt="Networking Fundamentals"
+              />
+              <h3 class="mt-4 text-xl font-bold text-campus-navy">
+                Networking Fundamentals
+              </h3>
+              <p class="mt-2 leading-7 text-slate-600">
+                Learn routing, switching, and secure network architecture
+                essentials.
+              </p>
+            </a>
+          </div>
+          <div class="text-campus-navy mt-4 text-center hover:text-campus-ink hover:underline">
+            <a href="">see more</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- learn with expert -->
+      <section>
+
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-campus-sky py-8 text-campus-navy">
+      <div
+        class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 sm:px-12 lg:grid-cols-4 lg:px-16"
+      >
+        <div>
+          <a href="./index.html" class="text-2xl font-bold">&lt;/&gt;CamCourses</a>
+          <p class="mt-4 leading-7 text-slate-600">
+            Practical technology education for learners in Cambodia and beyond.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Explore</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/course.html">Course catalog</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/degree.html">Degrees</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/about.html">About us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Support</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/policyAndPrivacy.html">Privacy policy</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/termOfService.html">Terms of service</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/login.html">Learner login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Contact</h3>
+          <ul class="mt-4 space-y-2">
+            <li><i class="fa-solid fa-envelope"></i> camcourses@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i> +855 12 345 678</li>
+            <li><i class="fa-solid fa-location-dot"></i> Phnom Penh, Cambodia</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="mx-auto mt-8 max-w-[75%] border-campus-sky" />
+      <div class="mx-auto mt-4 flex max-w-[75%] justify-center">
+        <p class="text-sm text-campus-navy sm:text-base">
+          © 2026 CamCourses. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      <button
+        id="scroll-top"
+        class="hidden h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-campus-blue shadow-lg hover:bg-campus-sky"
+        type="button"
+        aria-label="Back to top"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+
+    <div
+      id="toast"
+      class="toast pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-campus-navy px-5 py-3 font-semibold text-white opacity-0 shadow-lg"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

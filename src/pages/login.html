@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CamCourse | Login</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-campus-ink">
+    <header id="site-header" class="site-header fixed top-0 z-30 w-full border-b border-white/20 bg-white/90 text-campus-navy">
+      <nav class="mx-auto flex max-w-[94%] items-center justify-between gap-3 py-3 xl:max-w-[78%]">
+        <a href="../../index.html">
+          <span class="bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-2xl font-bold text-transparent">&lt;/&gt;CamCourse</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue" type="button" aria-label="Switch dark and light mode">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+          <a class="rounded-lg border border-campus-blue px-3 py-2 text-sm font-semibold text-campus-blue hover:bg-campus-sky" href="./signup.html">Sign up</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-screen bg-white pt-24">
+      <section class="px-4 pb-10">
+        <div class="mx-auto grid w-[94%] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg lg:w-[78%] lg:grid-cols-[0.95fr_1.05fr]">
+          <div class="bg-campus-navy p-8 text-white">
+            <p class="text-sm uppercase tracking-wide text-cyan-200">Welcome back</p>
+            <h1 class="mt-4 text-4xl font-black">Continue your learning journey.</h1>
+            <p class="mt-4 leading-7 text-blue-50">
+              Access your saved courses, role paths, and project progress from your CamCourse dashboard.
+            </p>
+            <div class="mt-8 space-y-3 text-sm">
+              <p><i class="fa-solid fa-check text-campus-cyan"></i> Track learning milestones</p>
+              <p><i class="fa-solid fa-check text-campus-cyan"></i> Resume active paths</p>
+              <p><i class="fa-solid fa-check text-campus-cyan"></i> Manage certificates</p>
+            </div>
+          </div>
+
+          <div class="p-8">
+            <h2 class="text-3xl font-black text-campus-navy">Login</h2>
+            <p class="mt-2 text-slate-600">Use your email and password to continue.</p>
+
+            <div class="mt-6 grid gap-3">
+              <button class="inline-flex items-center justify-center gap-3 rounded-lg border border-slate-300 bg-white px-4 py-3 font-semibold text-campus-ink hover:bg-campus-sky" type="button">
+                <i class="fa-brands fa-google text-campus-blue"></i> Continue with Google
+              </button>
+              <button class="inline-flex items-center justify-center gap-3 rounded-lg border border-slate-300 bg-white px-4 py-3 font-semibold text-campus-ink hover:bg-campus-sky" type="button">
+                <i class="fa-brands fa-github text-campus-blue"></i> Continue with GitHub
+              </button>
+            </div>
+
+            <div class="my-6 border-b border-slate-200"></div>
+
+            <form class="grid gap-4">
+              <label class="grid gap-2">
+                <span class="font-semibold text-campus-navy">Email</span>
+                <input class="rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-campus-blue" type="email" placeholder="you@example.com" required />
+              </label>
+              <label class="grid gap-2">
+                <span class="font-semibold text-campus-navy">Password</span>
+                <input class="rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-campus-blue" type="password" placeholder="Password" required />
+              </label>
+              <button class="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-campus-blue px-5 py-3 font-semibold text-white hover:bg-campus-navy" type="submit">
+                Login
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+
+            <p class="mt-5 text-sm text-slate-600">
+              New to CamCourse?
+              <a href="./signup.html" class="font-semibold text-campus-blue hover:underline">Create an account</a>
+            </p>
+            <p class="mt-2 text-xs text-slate-500">
+              By continuing, you agree to our
+              <a href="./termOfService.html" class="font-semibold hover:underline">Terms</a>
+              and
+              <a href="./policyAndPrivacy.html" class="font-semibold hover:underline">Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-campus-navy px-5 py-3 font-semibold text-white opacity-0 shadow-lg"></div>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

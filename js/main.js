@@ -1,26 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.documentElement;            
+  const root = document.documentElement;
   const body = document.body;
-  const exploreWrap = document.querySelector("#explore-wrap");
-  const exploreButton = document.querySelector("#explore-button");
-  const exploreMenu = document.querySelector("#explore-menu");
-  const notificationButton = document.querySelector("#notification-button");
-  const notificationMenu = document.querySelector("#notification-menu");
-  const notificationBadge = document.querySelector("#notification-badge");
-  const markReadButton = document.querySelector("#mark-read-button");
-  const userButton = document.querySelector("#user-button");
-  const userMenu = document.querySelector("#user-menu");
-  const themeToggle = document.querySelector("#theme-toggle");
-  const themeIcon = document.querySelector("#theme-icon");
-  const searchInput = document.querySelector("#search-input");
-  const searchButton = document.querySelector("#search-button");
-  const courseCards = document.querySelectorAll("[data-course-card]");
-  const courseEmptyState = document.querySelector("#course-empty-state");
-  const contactToggle = document.querySelector("#contact-toggle");
-  const contactPanel = document.querySelector("#contact-panel");
-  const contactClose = document.querySelector("#contact-close");
-  const scrollTopButton = document.querySelector("#scroll-top");
-  const toast = document.querySelector("#toast");
+
+  const byId = (id) => document.getElementById(id);
+  const toast = byId("toast");
+
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("show");
+    window.clearTimeout(showToast.timer);
+    showToast.timer = window.setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2600);
+  };
 
   const showPanel = (panel, button) => {
     if (!panel) return;
@@ -36,193 +29,155 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const togglePanel = (panel, button) => {
     if (!panel) return;
-    const isHidden = panel.classList.contains("hidden");
-    if (isHidden) {
-      showPanel(panel, button);
-    } else {
-      hidePanel(panel, button);
-    }
+    if (panel.classList.contains("hidden")) showPanel(panel, button);
+    else hidePanel(panel, button);
   };
 
-  const closeNavPanels = () => {
-    hidePanel(exploreMenu, exploreButton);
-    hidePanel(notificationMenu, notificationButton);
-    hidePanel(userMenu, userButton);
+  const closePanels = (items) => {
+    items.forEach(({ panel, button }) => hidePanel(panel, button));
   };
 
-  let exploreCloseTimer;
+  /* ── Explore menu ─────────────────────────── */
+  const exploreWrap = byId("explore-wrap");
+  const exploreButton = byId("explore-button");
+  const exploreMenu = byId("explore-menu");
+
+  /* ── User menu ────────────────────────────── */
+  const userButton = byId("user-button");
+  const userMenu = byId("user-menu");
+
+  /* ── Contact panel ────────────────────────── */
+  const contactToggle = byId("contact-toggle");
+  const contactPanel = byId("contact-panel");
+  const contactClose = byId("contact-close");
+
+  /* ── Theme toggle ─────────────────────────── */
+  const themeToggle = byId("theme-toggle");
+  const themeIcon = byId("theme-icon");
+
+  /* ── Mobile nav ───────────────────────────── */
+  const mobileNavToggle = byId("mobile-nav-toggle");
+  const mobileNavPanel = byId("mobile-nav-panel");
+
+  const panelGroup = [
+    { panel: exploreMenu, button: exploreButton },
+    { panel: userMenu, button: userButton },
+    { panel: contactPanel, button: contactToggle },
+    { panel: mobileNavPanel, button: mobileNavToggle },
+  ];
+
+  /* ── Explore: hover + click ────────────────── */
+  let exploreTimer;
   exploreWrap?.addEventListener("mouseenter", () => {
-    window.clearTimeout(exploreCloseTimer);
+    window.clearTimeout(exploreTimer);
     showPanel(exploreMenu, exploreButton);
   });
-
   exploreWrap?.addEventListener("mouseleave", () => {
-    exploreCloseTimer = window.setTimeout(() => {
-      hidePanel(exploreMenu, exploreButton);
-    }, 150);
+    exploreTimer = window.setTimeout(
+      () => hidePanel(exploreMenu, exploreButton),
+      120,
+    );
   });
-
   exploreButton?.addEventListener("click", (event) => {
     event.stopPropagation();
-    hidePanel(notificationMenu, notificationButton);
-    hidePanel(userMenu, userButton);
+    closePanels(
+      panelGroup.filter(
+        (item) => item.panel !== exploreMenu && item.panel !== null,
+      ),
+    );
     togglePanel(exploreMenu, exploreButton);
   });
-
   exploreMenu?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => hidePanel(exploreMenu, exploreButton));
   });
 
-  notificationButton?.addEventListener("click", (event) => {
-    event.stopPropagation();
-    hidePanel(exploreMenu, exploreButton);
-    hidePanel(userMenu, userButton);
-    togglePanel(notificationMenu, notificationButton);
-  });
-
-  markReadButton?.addEventListener("click", () => {
-    notificationBadge?.classList.add("hidden");
-    document.querySelectorAll(".notification-item").forEach((item) => {
-      item.style.opacity = "0.6";
-    });
-    showToast("All notifications marked as read.");
-  });
-
+  /* ── User menu ─────────────────────────────── */
   userButton?.addEventListener("click", (event) => {
     event.stopPropagation();
-    hidePanel(exploreMenu, exploreButton);
-    hidePanel(notificationMenu, notificationButton);
+    closePanels(panelGroup.filter((item) => item.panel !== userMenu));
     togglePanel(userMenu, userButton);
   });
 
-
-  const getSavedTheme = () => {
-    try {
-      return localStorage.getItem("camcourse-theme");
-    } catch {
-      return null;
-    }
-  };
-
-  const saveTheme = (theme) => {
-    try {
-      localStorage.setItem("camcourse-theme", theme);
-    } catch {
-      return;
-    }
-  };
-
-  //toggle theme
-  const applyTheme = (theme) => {
-    const darkMode = theme === "dark";
-    root.classList.toggle("dark", darkMode);
-    root.style.colorScheme = darkMode ? "dark" : "light";
-    body.classList.toggle("dark-mode", darkMode);
-    if (themeIcon) {
-      themeIcon.className = darkMode ? "fa-solid fa-sun" : "fa-solid fa-moon";
-    }
-    themeToggle?.setAttribute(
-      "title",
-      darkMode ? "switch to light mode" : "switch to dark mode",
-    );
-    themeToggle?.setAttribute(
-      "aria-label",
-      darkMode ? "Switch to light mode" : "Switch to dark mode",
-    );
-    saveTheme(theme);
-  };
-
-  const preferredTheme =
-    getSavedTheme() ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  applyTheme(preferredTheme);
-
-  themeToggle?.addEventListener("click", () => {
-    const nextTheme = root.classList.contains("dark") ? "light" : "dark";      applyTheme(nextTheme);
+  /* ── Mobile nav ────────────────────────────── */
+  mobileNavToggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    closePanels(panelGroup.filter((item) => item.panel !== mobileNavPanel));
+    togglePanel(mobileNavPanel, mobileNavToggle);
   });
 
-  const filterCourses = () => {
-    const query = searchInput?.value.trim().toLowerCase() || "";
-    let visibleCount = 0;
-
-    courseCards.forEach((card) => {
-      const searchableText = `${card.dataset.course || ""} ${card.textContent}`.toLowerCase();
-      const matched = searchableText.includes(query);
-      card.classList.toggle("is-hidden", query !== "" && !matched);
-      if (query === "" || matched) visibleCount += 1;
-    });
-
-    courseEmptyState?.classList.toggle("hidden", visibleCount > 0);
-  };
-
-  searchInput?.addEventListener("input", filterCourses);
-  searchButton?.addEventListener("click", () => {
-    filterCourses();
-    document.querySelector("#popular-courses")?.scrollIntoView({ behavior: "smooth" });
-  });
-
-  document.querySelectorAll(".purchase-btn").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      showToast(`${button.dataset.plan} selected. Checkout will be available soon.`);
-    });
-  });
-
-  courseCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const title = card.querySelector("h3")?.textContent.trim() || "Course";
-      showToast(`${title} added to your learning list.`);
-    });
-  });
-
+  /* ── Contact panel ─────────────────────────── */
   contactToggle?.addEventListener("click", (event) => {
     event.stopPropagation();
+    closePanels(panelGroup.filter((item) => item.panel !== contactPanel));
     togglePanel(contactPanel, contactToggle);
   });
-
   contactClose?.addEventListener("click", () => {
     hidePanel(contactPanel, contactToggle);
   });
 
-  window.addEventListener("scroll", () => {
-    const shouldShow = window.scrollY > 500;
-    scrollTopButton?.classList.toggle("hidden", !shouldShow);
-    scrollTopButton?.classList.toggle("flex", shouldShow);
+  /* ── Dark / Light mode ─────────────────────── */
+  const applyTheme = (theme) => {
+    const isDark = theme === "dark";
+    root.classList.toggle("dark", isDark);
+    root.style.colorScheme = isDark ? "dark" : "light";
+    body.classList.toggle("dark-mode", isDark);
+    if (themeIcon) {
+      themeIcon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    }
+    themeToggle?.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
+    localStorage.setItem("theme", theme);
+  };
+
+  // Load theme from localStorage or default to dark
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  applyTheme(savedTheme);
+
+  themeToggle?.addEventListener("click", () => {
+    applyTheme(root.classList.contains("dark") ? "light" : "dark");
   });
 
-  scrollTopButton?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  /* ── Accordion (FAQ) ───────────────────────── */
+  document.querySelectorAll("[data-accordion-trigger]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = document.querySelector(button.dataset.accordionTrigger);
+      if (!panel) return;
+      const opening = panel.classList.contains("hidden");
+      panel.classList.toggle("hidden", !opening);
+      button.setAttribute("aria-expanded", String(opening));
+      button.querySelector("i")?.classList.toggle("rotate-180", opening);
+    });
   });
 
+  /* ── Newsletter form ───────────────────────── */
+  document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const emailInput = form.querySelector('input[type="email"]');
+      const email = emailInput?.value?.trim();
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        showToast("Please enter a valid email address.");
+        return;
+      }
+      emailInput.value = "";
+      showToast("Thanks for subscribing to CamCourse updates.");
+    });
+  });
+
+  /* ── Close panels on outside click / Escape ── */
   document.addEventListener("click", (event) => {
     const target = event.target;
-    if (!exploreWrap?.contains(target)) hidePanel(exploreMenu, exploreButton);
-    if (!notificationMenu?.contains(target) && !notificationButton?.contains(target)) {
-      hidePanel(notificationMenu, notificationButton);
-    }
-    if (!userMenu?.contains(target) && !userButton?.contains(target)) {
-      hidePanel(userMenu, userButton);
-    }
-    if (!contactPanel?.contains(target) && !contactToggle?.contains(target)) {
-      hidePanel(contactPanel, contactToggle);
-    }
+    if (!target) return;
+    panelGroup.forEach(({ panel, button }) => {
+      if (!panel || panel.classList.contains("hidden")) return;
+      if (panel.contains(target) || button?.contains(target)) return;
+      hidePanel(panel, button);
+    });
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeNavPanels();
-      hidePanel(contactPanel, contactToggle);
-    }
+    if (event.key === "Escape") closePanels(panelGroup);
   });
-
-  function showToast(message) {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add("show");
-    window.clearTimeout(showToast.timer);
-    showToast.timer = window.setTimeout(() => {
-      toast.classList.remove("show");
-    }, 2400);
-  }
 });

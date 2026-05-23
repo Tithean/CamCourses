@@ -1,10 +1,6 @@
 ## Final project web design
 # Topic: 
-E-Learning Website
-# Website: 
-Camcourse
-# Teach by:
-Mrs.Sroung Sokchet
+E-Learning Website CamCourse
 # visit
 https://cam-courses-static-web.vercel.app/
 # author
