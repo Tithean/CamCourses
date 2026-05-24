@@ -151,6 +151,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* ── Developer Section Scroll ──────────────── */
+  const developerScroll = byId("developer-scroll");
+  const developerPrev = byId("developer-prev");
+  const developerNext = byId("developer-next");
+  const scrollDots = document.querySelectorAll(".scroll-dot");
+
+  if (developerScroll) {
+    const scrollAmount = 320; // Width of card + gap
+
+    // Update dot indicators based on scroll position
+    const updateDots = () => {
+      const scrollLeft = developerScroll.scrollLeft;
+      const index = Math.round(scrollLeft / scrollAmount);
+      scrollDots.forEach((dot, i) => {
+        dot.classList.toggle("bg-campus-blue", i === index);
+        dot.classList.toggle("bg-slate-300", i !== index);
+      });
+    };
+
+    developerPrev?.addEventListener("click", () => {
+      developerScroll.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      setTimeout(updateDots, 300);
+    });
+
+    developerNext?.addEventListener("click", () => {
+      developerScroll.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      setTimeout(updateDots, 300);
+    });
+
+    // Update dots on manual scroll
+    developerScroll.addEventListener("scroll", updateDots);
+
+    // Click on dots to jump to position
+    scrollDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        developerScroll.scrollTo({
+          left: index * scrollAmount,
+          behavior: "smooth",
+        });
+        setTimeout(updateDots, 300);
+      });
+    });
+  }
+
   /* ── Newsletter form ───────────────────────── */
   document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
     form.addEventListener("submit", (event) => {

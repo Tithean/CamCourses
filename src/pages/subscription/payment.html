@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <header
+      id="site-header"
+      class="site-header fixed top-0 z-30 w-full border-b border-white/20 bg-white/90 text-campus-navy transition-colors duration-180"
+    >
+      <nav
+        class="mx-auto flex max-w-[94%] items-center justify-between gap-3 py-3 xl:max-w-[78%]"
+      >
+        <a href="../../index.html">
+          <span class="text-campus-navy text-2xl font-bold"
+            >&lt;/&gt;CamCourse</span
+          >
+        </a>
+        <div class="flex items-center gap-2">
+          <button
+            id="theme-toggle"
+            class="nav-icon rounded-lg hover:bg-campus-sky"
+            type="button"
+            aria-label="Switch dark and light mode"
+          >
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Payment Section -->
+<section class="bg-white py-20 px-6">
+  <div class="max-w-4xl mx-auto bg-campus-sky shadow-xl rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    
+    <!-- Checkout Form -->
+    <div class="p-8">
+      <h2 class="text-2xl font-bold text-campus-navy mb-4">Payment Details</h2>
+      <form class="space-y-5">
+        <div>
+          <label class="block mb-1 text-sm text-shadow-campus-navy">Name on Card</label>
+          <input type="text" placeholder="John Doe" class="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block mb-1 text-sm text-shadow-campus-navy">Card Number</label>
+          <input type="text" placeholder="1234 5678 9012 3456" class="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1/2">
+            <label class="block mb-1 text-sm text-shadow-campus-navy">Expiry</label>
+            <input type="text" placeholder="MM/YY" class="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="w-1/2">
+            <label class="block mb-1 text-sm text-shadow-campus-navy">CVC</label>
+            <input type="text" placeholder="123" class="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+        <button type="submit" class="w-full mt-4 bg-campus-blue border border-campus-sky hover:bg-campus-navy text-white text-lg py-3 rounded-lg transition">Pay $8.99</button>
+      </form>
+    </div>
+
+    <!-- Payment Methods & Summary -->
+    <div class="bg-campus-sky p-8 border-l border-gray-200">
+      <h3 class="text-xl font-semibold text-campus-navy mb-6">Choose Payment Method</h3>
+
+      <div class="space-y-4">
+        <!-- Credit Card -->
+        <div class="flex items-center p-4 bg-campus-sky rounded-lg shadow-sm border hover:shadow-md transition">
+          <img src="https://signicat.imgix.net/blog/Visa_Grey.png?auto=format&crop=focalpoint&domain=signicat.imgix.net&fit=crop&fp-x=0.5&fp-y=0.5&h=630&ixlib=php-3.3.1&q=82&usm=20&w=1200&s=32775bc73bd8e9fb5da799ac08e8ddca" class="h-6 mr-4" alt="Visa" />
+          <p class="text-campus-navy font-medium">Credit / Debit Card</p>
+        </div>
+        
+        <!-- PayPal -->
+        <div class="flex items-center p-4 bg-campus-sky rounded-lg shadow-sm border hover:shadow-md transition">
+          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" class="h-6 mr-4" alt="PayPal" />
+          <p class="text-campus-navy font-medium">PayPal</p>
+        </div>
+
+        <!-- Apple Pay -->
+        <div class="flex items-center p-4 bg-campus-sky rounded-lg shadow-sm border hover:shadow-md transition">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="h-6 mr-4" alt="Apple" />
+          <p class="text-campus-navy font-medium">Apple Pay</p>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="mt-10 border-t pt-6">
+        <h4 class="text-campus-navy font-semibold mb-2">Order Summary</h4>
+        <div class="flex justify-between">
+          <span>Subscription Plan</span>
+          <span>$8.99</span>
+        </div>
+        <div class="flex justify-between text-gray-600 mt-1">
+          <span>Tax</span>
+          <span>$0.00</span>
+        </div>
+        <div class="flex justify-between text-lg font-bold text-campus-navy mt-4">
+          <span>Total</span>
+          <span>$8.99</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white py-8 text-campus-navy transition-colors duration-180">
+      <div
+        class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 sm:px-12 lg:grid-cols-4 lg:px-16"
+      >
+        <div>
+          <a href="./index.html" class="text-2xl font-bold">&lt;/&gt;CamCourses</a>
+          <p class="mt-4 leading-7 text-slate-600">
+            Practical technology education for learners in Cambodia and beyond.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Explore</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/course.html">Course catalog</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/degree.html">Degrees</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/about.html">About us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Support</h3>
+          <ul class="mt-4 space-y-2">
+            <li><a class="hover:text-campus-blue" href="./src/pages/policyAndPrivacy.html">Privacy policy</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/termOfService.html">Terms of service</a></li>
+            <li><a class="hover:text-campus-blue" href="./src/pages/login.html">Learner login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">Contact</h3>
+          <ul class="mt-4 space-y-2">
+            <li><i class="fa-solid fa-envelope"></i> camcourses@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i> +855 12 345 678</li>
+            <li><i class="fa-solid fa-location-dot"></i> Phnom Penh, Cambodia</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="mx-auto mt-8 max-w-[75%] border-campus-navy" />
+      <div class="mx-auto mt-4 flex max-w-[75%] justify-center">
+        <p class="text-sm text-campus-navy sm:text-base">
+          © 2026 CamCourses. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+
+<script src="/js/main.js"></script>
+</body>
+</html>

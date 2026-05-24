@@ -337,7 +337,7 @@ body.dark-mode input::placeholder {
 }
 
 /* Dark mode explore mega menu */
-body.dark-mode .explore-mega {
+body.dark-mode .explore-mega{
   background-color: var(--color-campus-ink);
   border-color: var(--color-campus-navy);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
@@ -375,6 +375,26 @@ body.dark-mode .explore-heading {
 
 body.dark-mode .explore-goal-link i {
   color: var(--color-campus-cyan);
+}
+
+/* ── Developer section scroll buttons (dark mode) ── */
+body.dark-mode #developer-prev,
+body.dark-mode #developer-next {
+  background-color: var(--color-campus-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #developer-prev:hover,
+body.dark-mode #developer-next:hover {
+  background-color: var(--color-campus-cyan);
+}
+
+body.dark-mode .scroll-dot {
+  background-color: var(--color-campus-navy);
+}
+
+body.dark-mode .scroll-dot.bg-campus-blue {
+  background-color: var(--color-campus-cyan);
 }
 
 /* ── Responsive: hide hero image on mobile ──── */

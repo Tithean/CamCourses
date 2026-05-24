@@ -28,7 +28,7 @@ document.querySelector("#homePage").innerHTML=
             <span
               class="bg-linear-to-r from-campus-navy to-campus-blue bg-clip-text text-2xl font-bold text-transparent dark:text-white"
             >
-              <span class="text-2xl">&lt;&gt;</span>CamCourse</span
+              <span class="text-2xl">&lt;/&gt;</span>CamCourse</span
             >
           </a>
 
@@ -49,7 +49,7 @@ document.querySelector("#homePage").innerHTML=
               class="explore-mega hidden"
             >
               <div class="explore-mega-inner">
-                <div class="explore-col explore-col-left bg-campus-sky">
+                <div class="explore-col explore-col-left">
                   <p class="explore-heading">Goals</p>
                   <div class="grid gap-1">
                     <a href="./src/pages/course.html" class="explore-goal-link">
@@ -60,7 +60,7 @@ document.querySelector("#homePage").innerHTML=
                       <i class="fa-solid fa-graduation-cap"></i>
                       Earn a Degree
                     </a>
-                    <a href="./src/pages/plans.html" class="explore-goal-link">
+                    <a href="./src/pages/subscription/plans.html" class="explore-goal-link">
                       <i class="fa-solid fa-certificate"></i>
                       Earn a Certificate
                     </a>
@@ -70,7 +70,7 @@ document.querySelector("#homePage").innerHTML=
                     </a>
                   </div>
                 </div>
-                <div class="explore-col explore-col-center bg-campus-sky">
+                <div class="explore-col explore-col-center">
                   <div>
                     <p class="explore-heading">Subjects</p>
                     <div class="grid gap-1">
@@ -93,7 +93,7 @@ document.querySelector("#homePage").innerHTML=
                     </div>
                   </div>
                 </div>
-                <div class="explore-col explore-col-right bg-campus-sky">
+                <div class="explore-col explore-col-right">
                   <p class="explore-heading">Popular Certificates</p>
                   <div class="grid gap-2">
                     <a href="./src/pages/courses/aiEngineerCourse.html" class="explore-link">
@@ -140,7 +140,7 @@ document.querySelector("#homePage").innerHTML=
 
           <button
             id="theme-toggle"
-            class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue"
+            class="nav-icon rounded-lg hover:bg-campus-sky"
             title="switch theme"
             type="button"
             aria-label="Switch dark and light mode"
@@ -149,7 +149,7 @@ document.querySelector("#homePage").innerHTML=
           </button>
 
           <button
-            class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue"
+            class="nav-icon rounded-lg hover:bg-campus-sky"
           >
             <i class="fa-solid fa-bell"></i>
           </button>
@@ -158,7 +158,7 @@ document.querySelector("#homePage").innerHTML=
           <div class="relative hidden sm:block">
             <button
               id="user-button"
-              class="nav-icon rounded-lg hover:bg-campus-sky hover:text-campus-blue"
+              class="nav-icon rounded-lg hover:bg-campus-sky"
               title="user"
               type="button"
               aria-expanded="false"
@@ -598,7 +598,7 @@ document.querySelector("#homePage").innerHTML=
               <p class="mt-4 leading-7 text-slate-600">
                 Choose a CamCourse plan and get access to our full catalog, guided projects, and professional certificates. Start learning today and accelerate your tech career.
               </p>
-              <a href="./src/pages/plans.html" class="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-campus-blue px-6 py-3 font-semibold text-white hover:bg-campus-navy transition-colors">
+              <a href="./src/pages/subscription/plans.html" class="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-campus-blue px-6 py-3 font-semibold text-white hover:bg-campus-navy transition-colors">
                 View Plans & Pricing
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -627,20 +627,20 @@ document.querySelector("#homePage").innerHTML=
             CamCourse is the trusted platform for university students and professionals looking to build modern technology skills.
           </p>
           <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-200">
-              <p class="text-4xl font-black text-campus-blue">100K+</p>
+            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-400">
+              <p class="text-4xl font-black text-campus-navy">100K+</p>
               <p class="mt-2 font-semibold text-campus-navy">Active Learners</p>
             </div>
-            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-200">
-              <p class="text-4xl font-black text-campus-blue">80+</p>
+            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-400">
+              <p class="text-4xl font-black text-campus-navy">80+</p>
               <p class="mt-2 font-semibold text-campus-navy">Career Programs</p>
             </div>
-            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-200">
-              <p class="text-4xl font-black text-campus-blue">12</p>
+            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-400">
+              <p class="text-4xl font-black text-campus-navy">12</p>
               <p class="mt-2 font-semibold text-campus-navy">University Partners</p>
             </div>
-            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-200">
-              <p class="text-4xl font-black text-campus-blue">96%</p>
+            <div class="rounded-lg bg-campus-sky p-6 shadow-sm border border-slate-400">
+              <p class="text-4xl font-black text-campus-navy">96%</p>
               <p class="mt-2 font-semibold text-campus-navy">Career Outcomes</p>
             </div>
           </div>
